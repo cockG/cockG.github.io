@@ -8,17 +8,19 @@
   <link rel="dns-prefetch" href="http://www.cockg.top">
   <title>SNMP | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备">
+  <meta name="description" content="SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备，SNMP采用的是UDP协议，采用C/S模型，不过在SNMP会话中，C通常不称为客户端，而叫管理进程，S通常不称为服务器，而是叫代理进程">
 <meta name="keywords" content="Network">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SNMP">
 <meta property="og:url" content="http://www.cockg.top/2018/02/23/snmp/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备">
-<meta property="og:updated_time" content="2018-02-23T12:51:38.555Z">
+<meta property="og:description" content="SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备，SNMP采用的是UDP协议，采用C/S模型，不过在SNMP会话中，C通常不称为客户端，而叫管理进程，S通常不称为服务器，而是叫代理进程">
+<meta property="og:image" content="http://www.cockg.top/img/snmp_struct.png">
+<meta property="og:updated_time" content="2018-02-23T13:25:56.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SNMP">
-<meta name="twitter:description" content="SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备">
+<meta name="twitter:description" content="SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备，SNMP采用的是UDP协议，采用C/S模型，不过在SNMP会话中，C通常不称为客户端，而叫管理进程，S通常不称为服务器，而是叫代理进程">
+<meta name="twitter:image" content="http://www.cockg.top/img/snmp_struct.png">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -156,8 +158,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备<br><a id="more"></a></p>
+        <p>SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备，SNMP采用的是UDP协议，采用C/S模型，不过在SNMP会话中，C通常不称为客户端，而叫管理进程，S通常不称为服务器，而是叫代理进程<br><a id="more"></a></p>
 <h2 id="SNMP系统的组成"><a href="#SNMP系统的组成" class="headerlink" title="SNMP系统的组成"></a>SNMP系统的组成</h2><p>SNMP系统 = MIB（管理信息库）+ SMI（管理信息系统）+ SNMP报文协议</p>
+<h2 id="SNMP的报文结构"><a href="#SNMP的报文结构" class="headerlink" title="SNMP的报文结构"></a>SNMP的报文结构</h2><p><img src="/img/snmp_struct.png" alt="snmp报文结构"></p>
 
       
 
@@ -392,7 +395,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">license</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -408,11 +415,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">license</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
             
             <div class="clearfix"></div>
