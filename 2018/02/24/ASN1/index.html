@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://www.cockg.top">
   <title>ASN.1 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ASN.1是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
+  <meta name="description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
 <meta name="keywords" content="Network">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ASN.1">
 <meta property="og:url" content="http://www.cockg.top/2018/02/24/ASN1/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="ASN.1是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
-<meta property="og:updated_time" content="2018-02-24T09:09:48.980Z">
+<meta property="og:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
+<meta property="og:updated_time" content="2018-02-24T09:51:25.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASN.1">
-<meta name="twitter:description" content="ASN.1是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
+<meta name="twitter:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -156,8 +156,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ASN.1是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的<br><a id="more"></a></p>
-<h2 id="什么是ASN-1"><a href="#什么是ASN-1" class="headerlink" title="什么是ASN.1"></a>什么是ASN.1</h2><p><a href="https://en.wikipedia.org/wiki/Abstract_Syntax_Notation_One" target="_blank" rel="noopener">维基百科中对ASN.1的定义</a>如下：<br>Abstract Syntax Notation.One (ASN.1) is an interface description language[dubious – discuss] for defining data structures that can be serialized and deserialized in a standard, cross-platform way. It’s broadly used in telecommunications and computer networking, and especially in cryptography<br>其大意为ANS.1是用于定义可被序列化和反序列化的数据结构的描述性语言，它被广泛应用于电信、计算机网络和密码等领域</p>
+        <p>ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的<br><a id="more"></a></p>
+<h2 id="什么是ASN-1"><a href="#什么是ASN-1" class="headerlink" title="什么是ASN.1"></a>什么是ASN.1</h2><p><a href="https://en.wikipedia.org/wiki/Abstract_Syntax_Notation_One" target="_blank" rel="noopener">维基百科中对ASN.1的定义</a>如下：<br>Abstract Syntax Notation.One (ASN.1) is an interface description language[dubious – discuss] for defining data structures that can be serialized and deserialized in a standard, cross-platform way. It’s broadly used in telecommunications and computer networking, and especially in cryptography<br>其大意为ANS.1是用于定义可被序列化和反序列化的数据结构的描述性语言，它被广泛应用于电信、计算机网络和密码等领域<br>ASN.1有多种标准编码规则，例如：GER、PER、OER和JER等，在SNMP协议中，ASN.1采用BER标准化编码规则对传输数据进行编码，BER编码规则使用TLV方式：{Type,Length,Value}</p>
+<h2 id="ASN-1常见预定义的数据类型"><a href="#ASN-1常见预定义的数据类型" class="headerlink" title="ASN.1常见预定义的数据类型"></a>ASN.1常见预定义的数据类型</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">编码值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">BOOLEAN</td>
+<td style="text-align:center">0x01</td>
+</tr>
+<tr>
+<td style="text-align:center">INTEGER</td>
+<td style="text-align:center">0x02</td>
+</tr>
+<tr>
+<td style="text-align:center">OCTET STRING</td>
+<td style="text-align:center">0x04</td>
+</tr>
+<tr>
+<td style="text-align:center">OBJECT IDENTIFIER</td>
+<td style="text-align:center">0x06</td>
+</tr>
+<tr>
+<td style="text-align:center">REAL (float)</td>
+<td style="text-align:center">0x09</td>
+</tr>
+</tbody>
+</table>
+<h2 id="BER"><a href="#BER" class="headerlink" title="BER"></a>BER</h2><p>BER用于将ASN.1语法表示的抽象数据转换成具体的比特流，经BER编码后的数据结构都由3个域构成：标识域（Type）+ 长度域（Length）+ 值域（Value），即TLV</p>
 
       
 
@@ -392,19 +423,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
             
             <div class="clearfix"></div>
