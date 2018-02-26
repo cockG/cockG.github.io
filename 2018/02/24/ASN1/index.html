@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://www.cockg.top/img/ber_tag_class.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_p_c.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_length_forms.png">
-<meta property="og:updated_time" content="2018-02-26T06:17:24.412Z">
+<meta property="og:updated_time" content="2018-02-26T06:24:24.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASN.1">
 <meta name="twitter:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
@@ -220,7 +220,7 @@
 <li>2c：表示该SNMP报文的长度</li>
 <li>02 01 01：表示Version的值（采用TLV），02（即T）表示该值的类型是INTEGER，01（即L）表该值的长度，01（即V）表示协议的版本为1，但是<strong>SNMP协议规定写入版本字段的是真是版本号减1的值</strong>，即这里真正的版本号值是2，所以这是一个SNMPv2c的SNMP协议</li>
 <li>04 06 70 75 62 6c 69 63：表示Community的值，04表示该值的类型是OCTET STRING，06表示该值的长度，70 75 62 6c 69 63表示Community的具体值</li>
-<li>a1 1f：表示PDU的类型，一般占用0-3个字节，a1（即T）表示PDU的类型是get-next-request，1f（即L）表示PDU的长度是31个字节，<strong>需要注意的是对a1的理解</strong>，a1所对应的二进制为10100001，依据Type的编码规则，其中Tag class的值是10，表示Context-specific，表明该类型需要依赖上下文进行确定，P/C的值是1，表示Constructed，表明V是由0个或者多个字节的编码组成的，Tag number的值是1，表示PDU的类型是get-next-request（<strong>1：get_request，2：get_next_request，3：get_response，4：set_request，5：trap</strong>），你可能会奇怪？<strong>V去哪了？</strong>该SNMP报文中接下来所有的字节就是V</li>
+<li>a1 1f：表示PDU的类型，一般占用0-3个字节，a1（即T）表示PDU的类型是get-next-request，1f（即L）表示PDU的长度是31个字节，<strong>需要注意的是对a1的理解</strong>，a1所对应的二进制为10100001，依据Type的编码规则，其中Tag class的值是10，表示Context-specific，表明该类型需要依赖上下文进行确定，所以该值的类型需要从其它地方进行确定，那要从哪里确定呢？没错，就是Tag number，Tag number的值是0001，表示PDU的类型是get-next-request（<strong>1：get_request，2：get_next_request，3：get_response，4：set_request，5：trap</strong>），你可能会奇怪？<strong>V去哪了？</strong>该SNMP报文中，a1 1f之后所有的字节就是V，P/C的值是1，表示Constructed，表明V是由0个或者多个字节的编码组成的</li>
 </ul>
 
       
@@ -456,15 +456,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">License</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
