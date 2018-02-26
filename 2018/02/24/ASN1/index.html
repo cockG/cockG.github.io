@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://www.cockg.top/img/ber_tag_class.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_p_c.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_length_forms.png">
-<meta property="og:updated_time" content="2018-02-26T02:21:41.763Z">
+<meta property="og:updated_time" content="2018-02-26T02:22:38.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASN.1">
 <meta name="twitter:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
@@ -198,7 +198,7 @@
 <h3 id="长度域（Length）的编码"><a href="#长度域（Length）的编码" class="headerlink" title="长度域（Length）的编码"></a>长度域（Length）的编码</h3><p>Length指明值域（Value）的长度，是不定长的，有两种格式：definite form（定型）和indefinite form（不定型），如下图所示：<br><img src="/img/ber_length_forms.png" alt="Length的两种格式"><br>其中，对于definite form的格式，又可以分为两种：</p>
 <ul>
 <li>short form（短格式），对应上图中的Definite,short</li>
-<li>long form（长格式），对应上图中的Definite,long<br>|  short form  |  long form  |<br>|:————-:|:————-:|<br>|  只占一个字节，该字节的第8位是固定值0，1-7位表示值域的长度  |  至少占用两个字节，第一个字节第8位是固定值1，1-7位的值表示第一个字节后面还有多少个字节，后面字节的值表示值域的长度  |</li>
+<li>long form（长格式），对应上图中的Definite,long<br><br>|  short form  |  long form  |<br>|:————-:|:————-:|<br>|  只占一个字节，该字节的第8位是固定值0，1-7位表示值域的长度  |  至少占用两个字节，第一个字节第8位是固定值1，1-7位的值表示第一个字节后面还有多少个字节，后面字节的值表示值域的长度  |</li>
 </ul>
 
       
