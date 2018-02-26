@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://www.cockg.top/img/ber_tag_class.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_p_c.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_length_forms.png">
-<meta property="og:updated_time" content="2018-02-26T06:24:24.278Z">
+<meta property="og:updated_time" content="2018-02-26T07:47:46.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASN.1">
 <meta name="twitter:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
@@ -214,13 +214,19 @@
 </tr>
 </tbody>
 </table>
-<h2 id="SNMP报文分析"><a href="#SNMP报文分析" class="headerlink" title="SNMP报文分析"></a>SNMP报文分析</h2><p>SNMP报文的分析实质上就是根据SNMP格式和BER对报文中的字节进行相应的解码<br>例如有如下一段SNMP报文：<br>30 2c 02 01 01 04 06 70  75 62 6c 69 63 a1 1f 02<br>04 22 70 8b d4 02 01 00  02 01 00 30 11 30 0f 06<br>0b 2b 06 01 04 01 8c a6  5e 01 01 01 05 00<br>分析SNMP报文时我们需要把握一个核心就是TLV</p>
+<h2 id="SNMP报文分析"><a href="#SNMP报文分析" class="headerlink" title="SNMP报文分析"></a>SNMP报文分析</h2><p>SNMP报文的分析实质上就是根据SNMP格式和BER对报文中的字节进行相应的解码<br>例如有如下一段SNMP报文：<br>30 2c 02 01 01 04 06 70  75 62 6c 69 63 a1 1f 02<br>04 22 70 8b d4 02 01 00  02 01 00 30 11 30 0f 06<br>0b 2b 06 01 04 01 8c a6  5e 01 01 01 05 00<br><strong>分析SNMP报文时我们需要把握一个核心就是TLV</strong></p>
 <ul>
 <li>30：表示这是一个SNMP报文</li>
 <li>2c：表示该SNMP报文的长度</li>
-<li>02 01 01：表示Version的值（采用TLV），02（即T）表示该值的类型是INTEGER，01（即L）表该值的长度，01（即V）表示协议的版本为1，但是<strong>SNMP协议规定写入版本字段的是真是版本号减1的值</strong>，即这里真正的版本号值是2，所以这是一个SNMPv2c的SNMP协议</li>
-<li>04 06 70 75 62 6c 69 63：表示Community的值，04表示该值的类型是OCTET STRING，06表示该值的长度，70 75 62 6c 69 63表示Community的具体值</li>
-<li>a1 1f：表示PDU的类型，一般占用0-3个字节，a1（即T）表示PDU的类型是get-next-request，1f（即L）表示PDU的长度是31个字节，<strong>需要注意的是对a1的理解</strong>，a1所对应的二进制为10100001，依据Type的编码规则，其中Tag class的值是10，表示Context-specific，表明该类型需要依赖上下文进行确定，所以该值的类型需要从其它地方进行确定，那要从哪里确定呢？没错，就是Tag number，Tag number的值是0001，表示PDU的类型是get-next-request（<strong>1：get_request，2：get_next_request，3：get_response，4：set_request，5：trap</strong>），你可能会奇怪？<strong>V去哪了？</strong>该SNMP报文中，a1 1f之后所有的字节就是V，P/C的值是1，表示Constructed，表明V是由0个或者多个字节的编码组成的</li>
+<li>02 01 01：表示Version的编码值（采用TLV），02（即T）表示该值的类型是INTEGER，01（即L）表该值的长度，01（即V）表示协议的版本为1，但是<strong>SNMP协议规定写入版本字段的是真是版本号减1的值</strong>，即这里真正的版本号值是2，所以这是一个SNMPv2c的SNMP协议</li>
+<li>04 06 70 75 62 6c 69 63：表示Community的编码值，04表示该值的类型是OCTET STRING，06表示该值的长度，70 75 62 6c 69 63表示Community的具体值</li>
+<li>a1 1f：表示PDU类型的编码值，一般占用0-3个字节，a1（即T）表示PDU的类型是get-next-request，1f（即L）表示PDU的长度是31个字节，<strong>需要注意的是对a1的理解</strong>，a1所对应的二进制为10100001，依据Type的编码规则，其中Tag class的值是10，表示Context-specific，表明该类型需要依赖上下文进行确定，所以该值的类型需要从其它地方进行确定，那要从哪里确定呢？没错，就是Tag number，Tag number的值是0001，表示PDU的类型是get-next-request（<strong>1：get_request，2：get_next_request，3：get_response，4：set_request，5：trap</strong>），你可能会奇怪？<strong>V去哪了？</strong>该SNMP报文中，a1 1f之后所有的字节就是V，P/C的值是1，表示Constructed，表明V是由0个或者多个字节的编码组成的<br>至此，我们已经完成了对SNMP报文中“公共SNMP首部”的分析，解析来我们分析“get/set首部”的编码内容</li>
+<li>02 04 22 70 8b d4：表示请求标识符的编码值，02表示该值的类型是INTEGER，04表该值的长度，22 70 8b d4表示请求标识符具体的值</li>
+<li>02 01 00：表示error-state（差错状态）的编码值，02表示该值的类型是INTEGER，01表该值的长度，00表示error-state具体的值</li>
+<li>02 01 00：表示error-index（差错索引）的编码值，02表示该值的类型是INTEGER，01表该值的长度，00表示error-index具体的值<br>至此，我们已经完成了对SNMP报文中“get/set首部”的分析，解析来我们分析“变量绑定”的编码内容</li>
+<li>30 11：表示变量绑定的编码信息，30所对应的二进制为10100000，其中Tag class的值是10，表示Context-specific，表明该类型需要依赖上下文进行确定，11表示该值的长度</li>
+<li>30 0f：表示一个变量，它的类型依然要根据上下文进行确定</li>
+<li>06 0b 2b 06 01 04 01 8c a6 5e 01 01 01 05 00：表示一个变量，它的类型是OBJECT IDENTIFIER，长度是0b，2b 06 01 04 01 8c a6 5e 01 01 01 05 00是具体的值</li>
 </ul>
 
       
