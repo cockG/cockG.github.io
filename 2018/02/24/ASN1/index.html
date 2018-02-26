@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://www.cockg.top/img/ber_tag_class.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_p_c.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_length_forms.png">
-<meta property="og:updated_time" content="2018-02-26T04:02:23.726Z">
+<meta property="og:updated_time" content="2018-02-26T04:03:28.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASN.1">
 <meta name="twitter:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
@@ -218,7 +218,7 @@
 <ul>
 <li>30：表示这是一个SNMP报文</li>
 <li>2c：表示该SNMP报文的长度</li>
-<li>02 01 01：表示Version的值（采用TLV），02表示该值的类型是INTEGER（即T），01表该值的长度（即L），01表示协议的版本为1（即V），但是<strong>SNMP协议规定写入版本字段的是真是版本号减1的值</strong>，即这里真正的版本号值是2，所以这是一个版本为SNMPv2c的SNMP协议</li>
+<li>02 01 01：表示Version的值（采用TLV），02表示该值的类型是INTEGER（即T），01表该值的长度（即L），01表示协议的版本为1（即V），但是<strong>SNMP协议规定写入版本字段的是真是版本号减1的值</strong>，即这里真正的版本号值是2，所以这是一个SNMPv2c的SNMP协议</li>
 <li>04 06 70 75 62 6c 69 63：表示Community的值（采用TLV），04表示该值的类型是OCTET STRING，06表示该值的长度，70 75 62 6c 69 63表示Community的具体值</li>
 </ul>
 
