@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://www.cockg.top/img/ber_tag_class.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_p_c.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_length_forms.png">
-<meta property="og:updated_time" content="2018-02-26T02:12:10.240Z">
+<meta property="og:updated_time" content="2018-02-26T02:15:34.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASN.1">
 <meta name="twitter:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
@@ -195,7 +195,21 @@
 </table>
 <h2 id="BER"><a href="#BER" class="headerlink" title="BER"></a>BER</h2><p>ASN.1有多种标准编码规则，例如：GER、PER、OER和JER等，编码规则用于将ASN.1语法表示的抽象数据转换成具体的比特流，经BER编码后的数据结构都由3个域构成：标识域（Type）+ 长度域（Length）+ 值域（Value），即TLV，在SNMP协议中，ASN.1采用BER标准化编码规则对传输数据进行编码</p>
 <h3 id="标识域（Type）的编码"><a href="#标识域（Type）的编码" class="headerlink" title="标识域（Type）的编码"></a>标识域（Type）的编码</h3><p>标识域指明数据的类型，它占用一个或者多个字节，我们常见的情况是Type只有一个字节（多字节的比较复杂，这里不做阐述），如下图所示：<br><img src="/img/ber_type_one.png" alt="Type的编码"><br>其中，7-8位表示Tag class，第6位表示该元素的类型是primitive还是constructed，1-5位表示Tag number<br>Tag class可能的取值如下：<br><img src="/img/ber_tag_class.png" alt="Tag class的可能取值"><br>P/C可能的取值如下：<br><img src="/img/ber_p_c.png" alt="P/C的可能取值"></p>
-<h3 id="长度域（Length）的编码"><a href="#长度域（Length）的编码" class="headerlink" title="长度域（Length）的编码"></a>长度域（Length）的编码</h3><p>Length指明值域（Value）的长度，是不定长的，有两种格式：definite form（定型）和indefinite form（不定型），如下图中的表格所示：<br><img src="/img/ber_length_forms.png" alt="Length的两种格式"><br>其中，对于definite form的格式，又可以分为short form（短格式），对应上表中的Definite,short，long form（长格式），对应上表中的Definite,long<br>|  short form  |  long form  |<br>|:————-:|:————-:|<br>|  aaa  |  bb  |</p>
+<h3 id="长度域（Length）的编码"><a href="#长度域（Length）的编码" class="headerlink" title="长度域（Length）的编码"></a>长度域（Length）的编码</h3><p>Length指明值域（Value）的长度，是不定长的，有两种格式：definite form（定型）和indefinite form（不定型），如下图中的表格所示：<br><img src="/img/ber_length_forms.png" alt="Length的两种格式"><br>其中，对于definite form的格式，又可以分为short form（短格式），对应上表中的Definite,short，long form（长格式），对应上表中的Definite,long</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">short form</th>
+<th style="text-align:center">long form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">aaa</td>
+<td style="text-align:center">bb</td>
+</tr>
+</tbody>
+</table>
 
       
 
@@ -430,15 +444,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">License</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
