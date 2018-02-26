@@ -15,14 +15,14 @@
 <meta property="og:url" content="http://www.cockg.top/2018/02/24/ASN1/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
-<meta property="og:image" content="http://www.cockg.top/img/ber_type.png">
+<meta property="og:image" content="http://www.cockg.top/img/ber_type_one.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_tag_class.png">
 <meta property="og:image" content="http://www.cockg.top/img/ber_p_c.png">
-<meta property="og:updated_time" content="2018-02-26T01:33:07.211Z">
+<meta property="og:updated_time" content="2018-02-26T01:44:03.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASN.1">
 <meta name="twitter:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
-<meta name="twitter:image" content="http://www.cockg.top/img/ber_type.png">
+<meta name="twitter:image" content="http://www.cockg.top/img/ber_type_one.png">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -193,7 +193,7 @@
 </tbody>
 </table>
 <h2 id="BER"><a href="#BER" class="headerlink" title="BER"></a>BER</h2><p>ASN.1有多种标准编码规则，例如：GER、PER、OER和JER等，编码规则用于将ASN.1语法表示的抽象数据转换成具体的比特流，经BER编码后的数据结构都由3个域构成：标识域（Type）+ 长度域（Length）+ 值域（Value），即TLV，在SNMP协议中，ASN.1采用BER标准化编码规则对传输数据进行编码</p>
-<h3 id="标识域（Type）的编码"><a href="#标识域（Type）的编码" class="headerlink" title="标识域（Type）的编码"></a>标识域（Type）的编码</h3><p>标识域指明数据的类型，它占用一个或者多个字节，由两部分组成：Tag class和Tag number，如下图所示：<br><img src="/img/ber_type.png" alt="Type的编码"><br>第一个字节中，第6位表示该元素的类型是primitive还是constructed，7-8位表示Tag class，1-5位表示Tag number<br>Tag class可能的取值如下：<br><img src="/img/ber_tag_class.png" alt="Tag class的可能取值"><br>P/C可能的取值如下：<br><img src="/img/ber_p_c.png" alt="P/C的可能取值"></p>
+<h3 id="标识域（Type）的编码"><a href="#标识域（Type）的编码" class="headerlink" title="标识域（Type）的编码"></a>标识域（Type）的编码</h3><p>标识域指明数据的类型，它占用一个或者多个字节，我们常见的情况是Type只有一个字节，如下图所示：<br><img src="/img/ber_type_one.png" alt="Type的编码"><br>第一个字节中，第6位表示该元素的类型是primitive还是constructed，7-8位表示Tag class，1-5位表示Tag number<br>Tag class可能的取值如下：<br><img src="/img/ber_tag_class.png" alt="Tag class的可能取值"><br>P/C可能的取值如下：<br><img src="/img/ber_p_c.png" alt="P/C的可能取值"></p>
 
       
 
@@ -428,19 +428,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
             
             <div class="clearfix"></div>
