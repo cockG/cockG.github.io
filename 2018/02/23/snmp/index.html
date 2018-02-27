@@ -17,7 +17,7 @@
 <meta property="og:description" content="SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备，SNMP采用的是UDP协议，采用C/S模型，不过在SNMP会话中，C通常不称为客户端，而叫管理进程，S通常不称为服务器，而是叫代理进程">
 <meta property="og:image" content="http://www.cockg.top/img/snmp_5_opt.png">
 <meta property="og:image" content="http://www.cockg.top/img/snmp_format.png">
-<meta property="og:updated_time" content="2018-02-24T01:39:35.214Z">
+<meta property="og:updated_time" content="2018-02-27T01:45:37.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SNMP">
 <meta name="twitter:description" content="SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备，SNMP采用的是UDP协议，采用C/S模型，不过在SNMP会话中，C通常不称为客户端，而叫管理进程，S通常不称为服务器，而是叫代理进程">
@@ -167,7 +167,7 @@
 <li>get-next-request：从代理进程处获取当前参数值的下一个参数值</li>
 <li>set-request：设置代理进程的一个或者多个参数值</li>
 <li>get-response：前三个操作的响应操作，返回一个或多个参数值</li>
-<li>trap：代理进程主动发起，通知管理进程某些事情<br>为了简化起见，通常前三个操作分别称为get、get-next和set操作<br>注：代理进程使用的端口为161，管理进程使用端口162<br>SNMP的5种报文操作如下图所示：<br><img src="/img/snmp_5_opt.png" alt="snmp5种报文操作"></li>
+<li>trap：代理进程主动发起，通知管理进程某些事情<br>为了简化起见，通常前三个操作分别称为get、get-next和set操作<br><strong>注：代理进程使用的端口为161，管理进程使用端口162</strong><br>SNMP的5种报文操作如下图所示：<br><img src="/img/snmp_5_opt.png" alt="snmp5种报文操作"></li>
 </ul>
 <h2 id="SNMP的报文格式"><a href="#SNMP的报文格式" class="headerlink" title="SNMP的报文格式"></a>SNMP的报文格式</h2><p>一个SNMP报文共有三个部分组成：公共SNMP首部、get/set首部或者trap首部、变量绑定，如下图所示：<br><img src="/img/snmp_format.png" alt="snmp报文格式"></p>
 
@@ -413,15 +413,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">License</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
