@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/02/24/big-little-endian/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="字节序，故名思义就是字节的顺序，顺序是指在内存中的存放顺序，开发中很少直接接触到字节序，一般只有在跨平台以及网络程序中字节序的问题才会被考虑">
-<meta property="og:updated_time" content="2018-02-24T08:57:29.563Z">
+<meta property="og:updated_time" content="2018-02-27T01:51:41.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字节序">
 <meta name="twitter:description" content="字节序，故名思义就是字节的顺序，顺序是指在内存中的存放顺序，开发中很少直接接触到字节序，一般只有在跨平台以及网络程序中字节序的问题才会被考虑">
@@ -182,8 +182,7 @@
 </table>
 <p>如果读取地址位0x0000的四个字节变量，若字节顺序为Big-Endia，则读取出的结果为0x1234abcd，若字节序为Little-Endian，则读取出来的结果为0xcdab3412</p>
 <h2 id="为什么会有字节序"><a href="#为什么会有字节序" class="headerlink" title="为什么会有字节序"></a>为什么会有字节序</h2><p>正如我们上面所说的一样，在跨平台时才会考虑字节序的问题，那么究竟什么叫跨平台？<br>跨平台泛指程序语言、软件或硬件设备可以在多种作业系统或不同硬件架构的计算机上运行，计算机的运行归根到底是CPU执行一条一条的指令完成的，不同的CPU能够执行的指令以及执行指令的方式是不一样的，比如CPU从内存中读取了4个字节11223344，有的CPU会认为它是0x11223344，而有的CPU则认为它是0x44332211，如果同一个数据在两种不同CPU的机器处理方式不一样就会引发问题，所以这个时候字节序就有作用了</p>
-<h2 id="网络字节序"><a href="#网络字节序" class="headerlink" title="网络字节序"></a>网络字节序</h2><p>TCP/IP协议中使用的字节序通常称之为网络字节序，它与具体的CPU类型、操作系统无关，从而可以保证数据在不同主机之间传输时能够被正确的解析，网络字节序采用Big-Endian方式</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>我们在编写网络通信程序时，在发送数据之前务必把主机字节序转换为网络字节序（即Big-Endian），在收到数据之后务必把网络字节序转换为主机字节序</p>
+<h2 id="网络字节序"><a href="#网络字节序" class="headerlink" title="网络字节序"></a>网络字节序</h2><p>TCP/IP协议中使用的字节序通常称之为网络字节序，它与具体的CPU类型、操作系统无关，从而可以保证数据在不同主机之间传输时能够被正确的解析，网络字节序采用Big-Endian方式<br>所以，我们在<strong>编写网络通信程序时，在发送数据之前务必把主机字节序转换为网络字节序（即Big-Endian），在收到数据之后务必把网络字节序转换为主机字节序</strong></p>
 
       
 
