@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.cockg.top">
-  <title>Blog</title>
+  <title>MIB | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cockG&apos;s blogs">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://www.cockg.top/index.html">
+  <meta name="description" content="MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP协议是非常有帮助的">
+<meta name="keywords" content="Miscellanea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIB">
+<meta property="og:url" content="http://www.cockg.top/2018/03/01/mib/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="cockG&apos;s blogs">
+<meta property="og:description" content="MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP协议是非常有帮助的">
+<meta property="og:image" content="http://www.cockg.top/img/mib_tree.png">
+<meta property="og:updated_time" content="2018-03-01T11:06:56.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
-<meta name="twitter:description" content="cockG&apos;s blogs">
+<meta name="twitter:title" content="MIB">
+<meta name="twitter:description" content="MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP协议是非常有帮助的">
+<meta name="twitter:image" content="http://www.cockg.top/img/mib_tree.png">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -134,16 +138,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-mib" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-mib" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/01/mib/">MIB</a>
+    <h1 class="article-title" itemprop="name">
+      MIB
     </h1>
   
 
@@ -156,10 +158,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP协议是非常有帮助的<br>
-        
+        <p>MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP协议是非常有帮助的<br><a id="more"></a></p>
+<h2 id="什么是MIB"><a href="#什么是MIB" class="headerlink" title="什么是MIB"></a>什么是MIB</h2><p>MIB是Management Information Base的首字母缩写，即管理信息库，可以将它理解为一种树形结构的数据结构，这种数据结构是网络中所有被管理对象的集合（即能够被管理进程查询和设置的信息），以及允许对每个数据项目进行的操作<br>每一个被管理对象都会具有如下3个属性：</p>
+<ul>
+<li>名称：有两种形式，一种是数字和.组成的字符串，叫做OID，另一种是方便用户识别的英文名称</li>
+<li>类型：被管理对象的数据类型</li>
+<li>编码：被管理对象编码成字符串的规则<br>MIB树如下图所示：<br><img src="/img/mib_tree.png" alt="MIB树"></li>
+</ul>
+<h2 id="MIB的分类"><a href="#MIB的分类" class="headerlink" title="MIB的分类"></a>MIB的分类</h2><p>MIB分为两类，标准MIB和企业私有MIB，企业私有MIB放置在上图的1.3.6.1.4.1节点下，由每个企业自己定义</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>赞赏博主<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -179,16 +219,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/01/mib/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.cockg.top/2018/03/01/mib/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/02/24/ASN1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ASN.1</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -208,386 +307,14 @@
 
 
 
-
   
-    <article id="post-ASN1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/24/ASN1/">ASN.1</a>
-    </h1>
   
 
-        
-        <a href="/2018/02/24/ASN1/" class="archive-article-date">
-  	<time datetime="2018-02-24T08:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Network</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/24/ASN1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-big-little-endian" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/24/big-little-endian/">字节序</a>
-    </h1>
   
 
-        
-        <a href="/2018/02/24/big-little-endian/" class="archive-article-date">
-  	<time datetime="2018-02-24T06:55:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>字节序，故名思义就是字节的顺序，顺序是指在内存中的存放顺序，开发中很少直接接触到字节序，一般只有在跨平台以及网络程序中字节序的问题才会被考虑<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Miscellanea</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/24/big-little-endian/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-snmp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/23/snmp/">SNMP</a>
-    </h1>
   
 
-        
-        <a href="/2018/02/23/snmp/" class="archive-article-date">
-  	<time datetime="2018-02-23T12:28:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>SNMP是Simple Network Management Protocol的首字母缩写，意为简单网络管理协议，管理工作站（网管系统）基于此协议可以远程管理所有支持这种协议的网络设备，SNMP采用的是UDP协议，采用C/S模型，不过在SNMP会话中，C通常不称为客户端，而叫管理进程，S通常不称为服务器，而是叫代理进程<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Network</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/23/snmp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-apache-license-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/23/apache-license-md/">apache license初识</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/23/apache-license-md/" class="archive-article-date">
-  	<time datetime="2018-02-23T08:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License 2.0</a>是Apache软件基金会于2004年发布的自由软件许可证，其说明文本中包含有如下一段描述：<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Miscellanea</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">License</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/23/apache-license-md/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-domain-auth-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/12/domain-auth-md/">GitHub + Hexo + yilia搭建个人博客系列问题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/12/domain-auth-md/" class="archive-article-date">
-  	<time datetime="2018-02-12T03:13:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近使用GitHub+Hexo+yilia搭建了一个个人的博客，网上已经有很多相关的博客教我们如何去搭建，但是当我按照这些步骤一步一步去做的时候，还是遇到了一些问题，在此将我遇到的这些我问题分享出来，如果很巧你也遇到这些问题，但是不知所措时，希望本文能对你有帮助<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Miscellanea</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/12/domain-auth-md/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -610,8 +337,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
