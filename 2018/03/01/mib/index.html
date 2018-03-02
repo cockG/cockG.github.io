@@ -17,7 +17,7 @@
 <meta property="og:description" content="MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP的5种报文操作是非常有帮助的">
 <meta property="og:image" content="http://www.cockg.top/img/mib_tree.png">
 <meta property="og:image" content="http://www.cockg.top/img/mib_file_1.png">
-<meta property="og:updated_time" content="2018-03-02T03:44:07.863Z">
+<meta property="og:updated_time" content="2018-03-02T03:56:10.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIB">
 <meta name="twitter:description" content="MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP的5种报文操作是非常有帮助的">
@@ -167,12 +167,12 @@
 <li>编码：被管理对象编码成字符串的规则<br>MIB树如下图所示：<br><img src="/img/mib_tree.png" alt="MIB树"><br>需要注意的是，树中的节点来自两类不同的MIB文件，即<strong>标准的MIB和企业私有的MIB</strong>，其中企业私有MIB是放置在上图的1.3.6.1.4.1节点下，由每个企业自己定义</li>
 </ul>
 <h2 id="MIB文件简析"><a href="#MIB文件简析" class="headerlink" title="MIB文件简析"></a>MIB文件简析</h2><p>上面我们是从宏观层面上认识MIB，下图展示的是一个具体MIB文件：<br><img src="/img/mib_file_1.png" alt="MIB文件"></p>
-<h3 id="MIB文件定义的开始和结束"><a href="#MIB文件定义的开始和结束" class="headerlink" title="MIB文件定义的开始和结束"></a>MIB文件定义的开始和结束</h3><p>MIB文件中的定义都是以DEFINITIONS ::= BEGIN关键字开始，以END关键字结束，例如上图中定义的SWDWS3160PRIMGMT-MIB：<br>SWDWS3160PRIMGMT-MIB    DEFINITIONS ::= BEGIN<br>    ……<br>END</p>
-<h3 id="模块引用"><a href="#模块引用" class="headerlink" title="模块引用"></a>模块引用</h3><p>一般在BEGIN关键字之后就是模块引用，以IMPORTS开始，以;结尾，FROM关键字说明所引用的模块及群组的来源<br>例如上图中的IMPORT部分：<br>IMPORTS<br>        MODULE-IDENTITY             FROM SNMPv2-SMI<br>        dlink-mgmt,dlink-products   FROM DLINK-ID-REC-MIB;</p>
-<h3 id="OBJECT-IDENTIFIER定义部分"><a href="#OBJECT-IDENTIFIER定义部分" class="headerlink" title="OBJECT IDENTIFIER定义部分"></a>OBJECT IDENTIFIER定义部分</h3><p>OBJECT IDENTIFIER主要是定义MIB树中的一个父节点，它的主要功能是用来将一类功能的对象结合起来<br>例如上图中的dlink-Dws3160Prod：<br>dlink-Dws3160Prod            OBJECT IDENTIFIER ::= { dlink-products 124 }</p>
-<h3 id="OBJECT-TYPE定义部分"><a href="#OBJECT-TYPE定义部分" class="headerlink" title="OBJECT-TYPE定义部分"></a>OBJECT-TYPE定义部分</h3><p>OBJECT-TYPE用来定义一个被管理资源的管理对象，对应MIB树中的一个叶子节点<br>例如：<br>sysLocation OBJECT-TYPE<br>    SYNTAX  DisplayString (SIZE (0..255))<br>    ACCESS  read-write<br>    STATUS  mandatory<br>    DESCRIPTION<br>            “The physical location of this node (e.g.,<br>            `telephone closet, 3rd floor’).”<br>    ::= { system 6 }</p>
-<h3 id="表类型"><a href="#表类型" class="headerlink" title="表类型"></a>表类型</h3><p>表类型是一个特殊的类型声明，表内声明的对象成为列对象，表对象可以看作是一些标量对象的集合，利用SEQUENCE和SEQUENCE OF定义表格和表格中的行，通常来说，表格对象的名字后面加后缀Table，行对象的名字后面加后缀Entry<br>例如：<br>egpNeighTable OBJECT-TYPE<br>    SYNTAX  SEQUENCE OF EgpNeighEntry<br>    ACCESS  not-accessible<br>    STATUS  mandatory<br>    DESCRIPTION<br>            “The EGP neighbor table.”<br>    ::= { egp 5 }</p>
-<p>egpNeighEntry OBJECT-TYPE<br>    SYNTAX  EgpNeighEntry<br>    ACCESS  not-accessible<br>    STATUS  mandatory<br>    DESCRIPTION<br>            “Information about this entity’s relationship with<br>            a particular EGP neighbor.”<br>    INDEX   { egpNeighAddr }<br>    ::= { egpNeighTable 1 }</p>
+<h3 id="MIB文件定义的开始和结束"><a href="#MIB文件定义的开始和结束" class="headerlink" title="MIB文件定义的开始和结束"></a>MIB文件定义的开始和结束</h3><p>MIB文件中的定义都是以DEFINITIONS ::= BEGIN关键字开始，以END关键字结束，例如上图中SWDWS3160PRIMGMT-MIB的定义：<br>SWDWS3160PRIMGMT-MIB    DEFINITIONS ::= BEGIN<br>&nbsp;……<br>END</p>
+<h3 id="模块引用"><a href="#模块引用" class="headerlink" title="模块引用"></a>模块引用</h3><p>一般在BEGIN关键字之后是模块引用，以IMPORTS开始，以;结尾，FROM关键字说明所引用模块及群组的来源<br>例如上图中的IMPORT部分：<br>IMPORTS<br>&nbsp;MODULE-IDENTITY             FROM SNMPv2-SMI<br>&nbsp;dlink-mgmt,dlink-products   FROM DLINK-ID-REC-MIB;</p>
+<h3 id="OBJECT-IDENTIFIER定义部分"><a href="#OBJECT-IDENTIFIER定义部分" class="headerlink" title="OBJECT IDENTIFIER定义部分"></a>OBJECT IDENTIFIER定义部分</h3><p>OBJECT IDENTIFIER用于定一个对象标识，对应MIB树中的一个父节点，它的主要功能是用来标识功能相近的对象<br>例如上图中的dlink-Dws3160Prod：<br>dlink-Dws3160Prod            OBJECT IDENTIFIER ::= { dlink-products 124 }</p>
+<h3 id="OBJECT-TYPE定义部分"><a href="#OBJECT-TYPE定义部分" class="headerlink" title="OBJECT-TYPE定义部分"></a>OBJECT-TYPE定义部分</h3><p>OBJECT-TYPE用来定义一个被管理资源的管理对象，对应MIB树中的一个叶子节点<br>例如：<br>sysLocation OBJECT-TYPE<br>&nbsp;SYNTAX  DisplayString (SIZE (0..255))<br>&nbsp;ACCESS  read-write<br>&nbsp;STATUS  mandatory<br>&nbsp;DESCRIPTION<br>&nbsp;&nbsp;”The physical location of this node (e.g.,<br>&nbsp;&nbsp;`telephone closet, 3rd floor’).”<br>&nbsp;::= { system 6 }</p>
+<h3 id="表类型"><a href="#表类型" class="headerlink" title="表类型"></a>表类型</h3><p>表类型是一个特殊的类型声明，表内声明的对象成为列对象，表对象可以看作是一些标量对象的集合，利用SEQUENCE和SEQUENCE OF定义表格和表格中的行，通常来说，表格对象的名字后面加后缀Table，行对象的名字后面加后缀Entry<br>例如：<br>egpNeighTable OBJECT-TYPE<br>&nbsp;SYNTAX  SEQUENCE OF EgpNeighEntry<br>&nbsp;ACCESS  not-accessible<br>&nbsp;STATUS  mandatory<br>&nbsp;DESCRIPTION<br>&nbsp;&nbsp;”The EGP neighbor table.”<br>&nbsp;::= { egp 5 }</p>
+<p>egpNeighEntry OBJECT-TYPE<br>&nbsp;SYNTAX  EgpNeighEntry<br>&nbsp;ACCESS  not-accessible<br>&nbsp;STATUS  mandatory<br>&nbsp;DESCRIPTION<br>&nbsp;&nbsp;”Information about this entity’s relationship with<br>&nbsp;&nbsp;a particular EGP neighbor.”<br>&nbsp;INDEX   { egpNeighAddr }<br>&nbsp;::= { egpNeighTable 1 }</p>
 
       
 
@@ -407,15 +407,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
