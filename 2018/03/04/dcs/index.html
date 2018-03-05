@@ -20,7 +20,9 @@
 <meta property="og:image" content="http://www.cockg.top/img/mix.png">
 <meta property="og:image" content="http://www.cockg.top/img/ap_model.png">
 <meta property="og:image" content="http://www.cockg.top/img/wds_model.png">
-<meta property="og:updated_time" content="2018-03-05T09:01:45.216Z">
+<meta property="og:image" content="http://www.cockg.top/img/wds_ap_model.png">
+<meta property="og:image" content="http://www.cockg.top/img/repeater_model.png">
+<meta property="og:updated_time" content="2018-03-05T09:22:54.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dcs">
 <meta name="twitter:description" content="DCS是英文D-Link Certified Specialist的首字母缩写，是D-Link公司的一种网络认证，就如同Cisco公司推出的思科认证一样">
@@ -243,11 +245,24 @@
 </ul>
 <ol>
 <li>任何移动客户端都非常简单地连接和共享网络资源</li>
-<li>移动连通性无需考虑所处的位置<br>AP模式的结构如下图所示：<br><img src="/img/ap_model.png" alt="AP模式"><h2 id="WDS概述"><a href="#WDS概述" class="headerlink" title="WDS概述"></a>WDS概述</h2>WDS即Wireless Distribution System的引文所字母缩写，即无线分布系统，简单来说就是用无线方式在AP间做成类似桥梁功能，可以想象成用一条虚拟的线路将AP串接起来</li>
+<li>移动连通性无需考虑所处的位置<br>应用实例如下图所示：<br><img src="/img/ap_model.png" alt="AP模式"><h2 id="WDS模式"><a href="#WDS模式" class="headerlink" title="WDS模式"></a>WDS模式</h2>WDS即Wireless Distribution System的引文所字母缩写，即无线分布系统，简单来说就是用无线方式在AP间做成类似桥梁功能，可以想象成用一条虚拟的线路将AP串接起来</li>
 </ol>
 <ul>
-<li>特色<br>通过无线的方式连接独立的LAN，而无需通过线缆连接<br>应用实例如下：<br>将位于A街的分支办公室与位于B街的总部连接起来<br><img src="/img/wds_model.png" alt="WDS的应用"><br>注：<strong>运行WDS模式的AP将不能再介入无线客户端</strong></li>
+<li>特色<br>通过无线的方式连接独立的LAN，而无需通过线缆连接<br>应用实例如下图所示：<br>将位于A街的分支办公室与位于B街的总部连接起来<br><img src="/img/wds_model.png" alt="WDS的应用"><br>注：<strong>运行WDS模式的AP将不能再介入无线客户端</strong><h2 id="WDS-AP模式"><a href="#WDS-AP模式" class="headerlink" title="WDS + AP模式"></a>WDS + AP模式</h2></li>
+<li>特色</li>
 </ul>
+<ol>
+<li>与WDS模式具有相同的功能，但是任然可以作为AP使用</li>
+<li>WDS + AP模式允许客户端接入到AP，客户端以无线方式连接至AP进而连接至其它的局域网<br>应用实例如下图所示：<br><img src="/img/wds_ap_model.png" alt="WDS + AP的应用"><h2 id="中继器模式"><a href="#中继器模式" class="headerlink" title="中继器模式"></a>中继器模式</h2>无线中继器必须和所连接的无线访问点使用相同的信道，无线访问点的SSID也要配置进无线中继器中，此时AP作用类似于一块无线网卡</li>
+</ol>
+<ul>
+<li>特色</li>
+</ul>
+<ol>
+<li>可以通过另外一个AP或者无线路由器扩展无线网络的覆盖范围，而无需安装任何线缆</li>
+<li>运行此种模式的AP可以获得额外50%的覆盖区域</li>
+<li>可以应用于任何类型的接入点，而不论它们的品牌<br>应用实例如下图所示：<br><img src="/img/repeater_model.png" alt="中继器的应用"></li>
+</ol>
 
       
 
@@ -482,15 +497,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">License</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
