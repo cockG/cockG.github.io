@@ -33,7 +33,15 @@
 <meta property="og:image" content="http://www.cockg.top/img/wpa_wpa2.png">
 <meta property="og:image" content="http://www.cockg.top/img/radius.png">
 <meta property="og:image" content="http://www.cockg.top/img/mac.png">
-<meta property="og:updated_time" content="2018-03-06T03:40:58.177Z">
+<meta property="og:image" content="http://www.cockg.top/img/muti_ssid.png">
+<meta property="og:image" content="http://www.cockg.top/img/comm_vlan.png">
+<meta property="og:image" content="http://www.cockg.top/img/wireless_roaming.png">
+<meta property="og:image" content="http://www.cockg.top/img/snmp_comps.png">
+<meta property="og:image" content="http://www.cockg.top/img/wireless_app_soho.png">
+<meta property="og:image" content="http://www.cockg.top/img/wireless_app_extend_network.png">
+<meta property="og:image" content="http://www.cockg.top/img/wireless_app_public_hot.png">
+<meta property="og:image" content="http://www.cockg.top/img/wireless_app_connect_builds.png">
+<meta property="og:updated_time" content="2018-03-06T06:21:17.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DCS(-)">
 <meta name="twitter:description" content="DCS是英文D-Link Certified Specialist的首字母缩写，是D-Link公司的一种网络认证，就如同Cisco公司推出的思科认证一样">
@@ -391,6 +399,42 @@
 <li>基于指定的MAC地址可以非常简单的控制某台计算机是否可以访问网络</li>
 <li>很少将此方法作为唯一的安全措施，因为极易被破解并且可以修改无线网卡的MAC地址<br>MAC的工作示意图如下：<br><img src="/img/mac.png" alt="MAC的工作示意图"></li>
 </ol>
+<h1 id="无线方案"><a href="#无线方案" class="headerlink" title="无线方案"></a>无线方案</h1><h2 id="多SSID"><a href="#多SSID" class="headerlink" title="多SSID"></a>多SSID</h2><p>SSID是Service Set Identifier的英文首字母缩写，即服务集标识，多SSID即：</p>
+<ul>
+<li>通过将多个SSID应用至access point，可以逻辑地将一个硬件设备(access point)分成多个虚拟的access point</li>
+<li>每个虚拟的AP对于终端来说都好似一个独立的物理AP<br>多SSID的工作示意图如下：<br><img src="/img/muti_ssid.png" alt="多SSID的工作示意图"><h2 id="无线VLAN"><a href="#无线VLAN" class="headerlink" title="无线VLAN"></a>无线VLAN</h2></li>
+<li>特色</li>
+</ul>
+<ol>
+<li>无线客户端逻辑地分配至一组种成为一段，这一段所处的区域就称为无线VLAN</li>
+<li>在无线VLAN中，多个SSID将被频繁的应用（每个VLAN持有一个SSID）</li>
+<li>每个SSID映射到一个VLAN-ID</li>
+</ol>
+<ul>
+<li>好处</li>
+</ul>
+<ol>
+<li>不添加额外的设备将用户进行分段至不同的部门</li>
+<li>基于安全和性能需求对无线应用进行分割<br>例如在由两个部门部门（Operational和Marketing）构成的办公室中应用无线VLAN，其架构图如下：<br><img src="/img/comm_vlan.png" alt="普通无线VLAN架构"><h2 id="无线漫游"><a href="#无线漫游" class="headerlink" title="无线漫游"></a>无线漫游</h2></li>
+</ol>
+<ul>
+<li>特点</li>
+</ul>
+<ol>
+<li>在不同的WLAN之间移动时，客户端始终保持着无缝和稳定的连接</li>
+<li>无线漫游维持客户端的连接性，当客户端移动到不同的WLAN时不需要每次都重新认证和登录<br>无线漫游的应用如下图所示：<br><img src="/img/wireless_roaming.png" alt="无线漫游的应用"><h2 id="SNMP"><a href="#SNMP" class="headerlink" title="SNMP"></a>SNMP</h2>SNMP即简单网络管理协议，是用来管理复杂网络的一组协议，用于在网络管理系统中监控网络附属设备<br>SNMP的主要组成如下图所示：<br><img src="/img/snmp_comps.png" alt="SNMP的主要组成"><br>SNMP包括三个关键的部件：被管理设备，代理和网络管理系统（NMS）</li>
+</ol>
+<ul>
+<li>被管理设备：是一个网络节点，包括SNMP，被管理设备收集和存储管理信息，被管理设备，有时候也称作网元，可能是路由器、服务器、交换机或者网桥、hub、计算机主机、打印机等</li>
+<li>代理：是驻存在被管理设备上的网络管理软件，代理具有本地管理信息并且能够将器抓换成与SNMP兼容的格式</li>
+<li>NMS：对被管理设备进行监测和控制，任何被管理设备必须存在一个或者多个NMS<br><strong>MIB是一个被网络管理系统所监控的对象的数据库</strong>，SNMP中就是使用的标准的MIB格式</li>
+</ul>
+<h1 id="无线的应用"><a href="#无线的应用" class="headerlink" title="无线的应用"></a>无线的应用</h1><ul>
+<li>SOHO（Small Office Home Office）<br><img src="/img/wireless_app_soho.png" alt="无线应用_SHOHO"></li>
+<li>扩展已经存在的网络架构<br><img src="/img/wireless_app_extend_network.png" alt="无线应用_扩展已经存在的网络架构"></li>
+<li>位于公共区域的移动计算<br><img src="/img/wireless_app_public_hot.png" alt="无线应用_位于公共区域的移动计算"></li>
+<li>连接两个建筑的网络<br><img src="/img/wireless_app_connect_builds.png" alt="无线应用_连接两个建筑的网络"></li>
+</ul>
 
       
 
