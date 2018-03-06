@@ -18,7 +18,8 @@
 <meta property="og:image" content="http://www.cockg.top/img/muti_ssid.png">
 <meta property="og:image" content="http://www.cockg.top/img/comm_vlan.png">
 <meta property="og:image" content="http://www.cockg.top/img/wireless_roaming.png">
-<meta property="og:updated_time" content="2018-03-06T03:40:48.851Z">
+<meta property="og:image" content="http://www.cockg.top/img/snmp_comps.png">
+<meta property="og:updated_time" content="2018-03-06T03:57:48.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DCS(二)">
 <meta name="twitter:description" content="DCS是英文D-Link Certified Specialist的首字母缩写，是D-Link公司的一种网络认证，就如同Cisco公司推出的思科认证一样">
@@ -184,8 +185,13 @@
 </ul>
 <ol>
 <li>在不同的WLAN之间移动时，客户端始终保持着无缝和稳定的连接</li>
-<li>无线漫游维持客户端的连接性，当客户端移动到不同的WLAN时不需要每次都重新认证和登录<br>无线漫游的应用如下图所示：<br><img src="/img/wireless_roaming.png" alt="无线漫游的应用"></li>
+<li>无线漫游维持客户端的连接性，当客户端移动到不同的WLAN时不需要每次都重新认证和登录<br>无线漫游的应用如下图所示：<br><img src="/img/wireless_roaming.png" alt="无线漫游的应用"><h2 id="SNMP"><a href="#SNMP" class="headerlink" title="SNMP"></a>SNMP</h2>SNMP即简单网络管理协议，是用来管理复杂网络的一组协议，用于在网络管理系统中监控网络附属设备<br>SNMP的主要组成如下图所示：<br><img src="/img/snmp_comps.png" alt="SNMP的主要组成"><br>SNMP包括三个关键的部件：被管理设备，代理和网络管理系统（NMS）</li>
 </ol>
+<ul>
+<li>被管理设备：是一个网络节点，包括SNMP，被管理设备收集和存储管理信息，被管理设备，有时候也称作网元，可能是路由器、服务器、交换机或者网桥、hub、计算机主机、打印机等</li>
+<li>代理：是驻存在被管理设备上的网络管理软件，代理具有本地管理信息并且能够将器抓换成与SNMP兼容的格式</li>
+<li>NMS：对被管理设备进行监测和控制，任何被管理设备必须存在一个或者多个NMS<br><strong>MIB是一个被网络管理系统所监控的对象的数据库</strong>，SNMP使用标准的MIB格式</li>
+</ul>
 
       
 
@@ -420,6 +426,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
@@ -429,10 +439,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DCS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
