@@ -27,7 +27,11 @@
 <meta property="og:image" content="http://www.cockg.top/img/wisp_client_router_model.png">
 <meta property="og:image" content="http://www.cockg.top/img/poe.png">
 <meta property="og:image" content="http://www.cockg.top/img/poe_use.png">
-<meta property="og:updated_time" content="2018-03-05T14:42:32.934Z">
+<meta property="og:image" content="http://www.cockg.top/img/wireless_risk_1.png">
+<meta property="og:image" content="http://www.cockg.top/img/wireless_risk_1.png">
+<meta property="og:image" content="http://www.cockg.top/img/wep.png">
+<meta property="og:image" content="http://www.cockg.top/img/wpa_wpa2.png">
+<meta property="og:updated_time" content="2018-03-06T02:12:28.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dcs">
 <meta name="twitter:description" content="DCS是英文D-Link Certified Specialist的首字母缩写，是D-Link公司的一种网络认证，就如同Cisco公司推出的思科认证一样">
@@ -291,6 +295,57 @@
 <li>通过发送数据的以太网线缆为设备提供直流电（DC电压）</li>
 <li>安装无线设备的地方未提供电源时可以使用POE供电技术<br>基本结构图如下：<br><img src="/img/poe.png" alt="POE结构图"><br>在建筑物的房顶设置无线接入点时，就可以使用POE技术，如下图所示：<br><img src="/img/poe_use.png" alt="POE结构图"></li>
 </ol>
+<h1 id="Wireless天线"><a href="#Wireless天线" class="headerlink" title="Wireless天线"></a>Wireless天线</h1><p>天线主要分为室内天线和室外天线两种</p>
+<ul>
+<li>特色</li>
+</ul>
+<ol>
+<li>通常用于无线设备（AP、无线网桥、无线路由器）</li>
+<li>提升无线设备的信号强度</li>
+<li>接受从其它无线设备发出的无线信息</li>
+</ol>
+<ul>
+<li>类型</li>
+</ul>
+<ol>
+<li>全向天线/偶极天线，信号可以辐射到四面八方</li>
+<li>半向天线，信号朝着一定的方向，传递的距离较短但是覆盖区域较大</li>
+<li>定向天线，信号朝着一定的方向，可以传递较长的距离，覆盖区域较小</li>
+</ol>
+<h1 id="无线安全"><a href="#无线安全" class="headerlink" title="无线安全"></a>无线安全</h1><h2 id="WLAN的风险"><a href="#WLAN的风险" class="headerlink" title="WLAN的风险"></a>WLAN的风险</h2><ol>
+<li>未授权的用户可能会通过无线网络访问Internet，如下图所示：<br><img src="/img/wireless_risk_1.png" alt="风险1"></li>
+<li>一些人通过无线网络传递一些重要和机密的数据，如下图所示：<br><img src="/img/wireless_risk_1.png" alt="风险2"><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2>可配置如下的无线安全方式</li>
+</ol>
+<ul>
+<li>Wired Equivalent Privacy（WEP）:使用静态密钥的较弱的认证方式</li>
+<li>Wi-Fi Protected Access（WPA/WPA2）：使用动态密钥较强的认证方式</li>
+<li>Remote Access Dial-Up Service（RADIUS）：集中式身份验证用户协议</li>
+<li>MAC过滤/IP过滤：允许基于客户端的MAC或者IP地址的方式加入到网络中</li>
+<li>WLAN分割：隔离无线局域网客户端，移动客户端不能通过访问点交换数据<h2 id="WEP"><a href="#WEP" class="headerlink" title="WEP"></a>WEP</h2></li>
+<li>特色</li>
+</ul>
+<ol>
+<li>针对WLAN的基本的认证方式</li>
+<li>适用于家庭用户，不适宜企业网环境</li>
+<li>所有的客户端共享一套密钥<br>WEP的工作示意图如下：<br><img src="/img/wep.png" alt="WEP的工作示意图"><h2 id="WPA"><a href="#WPA" class="headerlink" title="WPA"></a>WPA</h2></li>
+</ol>
+<ul>
+<li>特色</li>
+</ul>
+<ol>
+<li>改良版的WEP</li>
+<li>此架构包括客户端，访问点和认证服务器（最典型的是RADIUS服务器）</li>
+<li>密钥总是自动变化的（动态密钥）<h2 id="WPA2"><a href="#WPA2" class="headerlink" title="WPA2"></a>WPA2</h2></li>
+</ol>
+<ul>
+<li>特色</li>
+</ul>
+<ol>
+<li>个人模式：使用预先设置的密码对网络访问进行认证</li>
+<li>企业模式：通过服务器对客户端精选认证，通常是RADIUS server</li>
+<li>与WPA认证方式兼容</li>
+<li>与WPA认证方式类似，主要的区别是WPA2使用更高级的加密技术<br>WPA和WPA2的对比如下：<br>| 方式 | WPA | WPA2 |<br>|:————-:|:————-:|<br>| 企业模式<br>（商业、政府、教育） | 认证：IEEE 802.1X/EAP<br>加密：TKIP/MIC | 认证：IEEE 802.1X/EAP<br>加密：AES-CCMP |<br>| 个人模式<br>（SOHO、家庭、个人） | 认证：PSK<br>加密：TKIP/MIC | 认证：PSK<br>加密：AES-CCMP |<br>WPA/WPA2的工作示意图如下：<br><img src="/img/wpa_wpa2.png" alt="WPA/WPA2的工作示意图"></li>
+</ol>
 
       
 
@@ -525,15 +580,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">License</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
