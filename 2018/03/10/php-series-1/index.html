@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.cockg.top">
-  <title>MIB | Blog</title>
+  <title>学习PHP遇到的问题 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP的5种报文操作是非常有帮助的">
-<meta name="keywords" content="Miscellanea">
+  <meta name="description" content="最近了解一下传说中的PHP，并且开始使用它开发一个小小的Web程序来练练手，其中碰到了一些问题，在此记录和大家分享一下">
+<meta name="keywords" content="Programming,PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MIB">
-<meta property="og:url" content="http://www.cockg.top/2018/03/01/mib/index.html">
+<meta property="og:title" content="学习PHP遇到的问题">
+<meta property="og:url" content="http://www.cockg.top/2018/03/10/php-series-1/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP的5种报文操作是非常有帮助的">
-<meta property="og:image" content="http://www.cockg.top/img/mib_tree.png">
-<meta property="og:image" content="http://www.cockg.top/img/mib_file_1.png">
-<meta property="og:updated_time" content="2018-03-02T04:01:16.374Z">
+<meta property="og:description" content="最近了解一下传说中的PHP，并且开始使用它开发一个小小的Web程序来练练手，其中碰到了一些问题，在此记录和大家分享一下">
+<meta property="og:updated_time" content="2018-03-10T04:53:33.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MIB">
-<meta name="twitter:description" content="MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP的5种报文操作是非常有帮助的">
-<meta name="twitter:image" content="http://www.cockg.top/img/mib_tree.png">
+<meta name="twitter:title" content="学习PHP遇到的问题">
+<meta name="twitter:description" content="最近了解一下传说中的PHP，并且开始使用它开发一个小小的Web程序来练练手，其中碰到了一些问题，在此记录和大家分享一下">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -139,40 +136,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mib" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-php-series-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      MIB
+      学习PHP遇到的问题
     </h1>
   
 
         
-        <a href="/2018/03/01/mib/" class="archive-article-date">
-  	<time datetime="2018-03-01T10:32:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
+        <a href="/2018/03/10/php-series-1/" class="archive-article-date">
+  	<time datetime="2018-03-10T04:04:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>MIB是SNMP系统中非常重要的一个概念，理解MIB对于我们理解SNMP的5种报文操作是非常有帮助的<br><a id="more"></a></p>
-<h2 id="什么是MIB"><a href="#什么是MIB" class="headerlink" title="什么是MIB"></a>什么是MIB</h2><p>MIB是Management Information Base的首字母缩写，即管理信息库，可以将它理解为一些对象的集合，并且这些对象可以组织成一棵树，这里的对象对应网络中被管理的对象，网络中被管理对象定义了能够被管理进程查询和设置的信息以及允许对每个信息所能进行的操作<br>每一个被管理对象都会具有如下3个属性：</p>
-<ul>
-<li>名称：有两种形式，一种是数字和.组成的字符串，叫做OID，如.1.3.6.1.2，另一种是方便用户识别的英文名称，如mgmt</li>
-<li>类型：被管理对象的数据类型</li>
-<li>编码：被管理对象编码成字符串的规则<br>MIB树如下图所示：<br><img src="/img/mib_tree.png" alt="MIB树"><br>需要注意的是，树中的节点来自两类不同的MIB文件，即<strong>标准的MIB和企业私有的MIB</strong>，其中企业私有MIB是放置在上图的1.3.6.1.4.1节点下，由每个企业自己定义</li>
+        <p>最近了解一下传说中的PHP，并且开始使用它开发一个小小的Web程序来练练手，其中碰到了一些问题，在此记录和大家分享一下<br><a id="more"></a></p>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
+<li>操作系统：Window10</li>
+<li><a href="http://www.wampserver.com/#download-wrapper" target="_blank" rel="noopener">wampserver</a>：3.0.6</li>
+<li><a href="http://www.eclipse.org/downloads/packages/eclipse-php-developers/heliosr" target="_blank" rel="noopener">Eclipse for PHP</a>：heliosr<br>注：<strong>WampServer是一款由法国人开发的Apache Web服务器、PHP解释器以及MySQL数据库的整合软件包，博主使用的是PHP版本为5.6.25，apache的版本为2.4.23，mysql的版本为5.7.14</strong></li>
 </ul>
-<h2 id="MIB文件简析"><a href="#MIB文件简析" class="headerlink" title="MIB文件简析"></a>MIB文件简析</h2><p>上面我们是从宏观层面上认识MIB，下面我们从微观层面认识MIB，下图中是一个MIB文件：<br><img src="/img/mib_file_1.png" alt="MIB文件"></p>
-<h3 id="MIB文件定义的开始和结束"><a href="#MIB文件定义的开始和结束" class="headerlink" title="MIB文件定义的开始和结束"></a>MIB文件定义的开始和结束</h3><p>MIB文件中的定义都是以DEFINITIONS ::= BEGIN关键字开始，以END关键字结束，例如上图中SWDWS3160PRIMGMT-MIB的定义：<br>SWDWS3160PRIMGMT-MIB    DEFINITIONS ::= BEGIN<br>&nbsp;&nbsp;&nbsp;&nbsp;……<br>END</p>
-<h3 id="模块引用"><a href="#模块引用" class="headerlink" title="模块引用"></a>模块引用</h3><p>一般在BEGIN关键字之后是模块引用，以IMPORTS开始，以;结尾，FROM关键字说明所引用模块及群组的来源<br>例如上图中的IMPORT部分：<br>IMPORTS<br>&nbsp;&nbsp;&nbsp;&nbsp;MODULE-IDENTITY             FROM SNMPv2-SMI<br>&nbsp;&nbsp;&nbsp;&nbsp;dlink-mgmt,dlink-products   FROM DLINK-ID-REC-MIB;</p>
-<h3 id="OBJECT-IDENTIFIER定义部分"><a href="#OBJECT-IDENTIFIER定义部分" class="headerlink" title="OBJECT IDENTIFIER定义部分"></a>OBJECT IDENTIFIER定义部分</h3><p>OBJECT IDENTIFIER用于定一个对象标识，对应MIB树中的一个父节点，它的主要功能是用来标识功能相近的对象<br>例如上图中的dlink-Dws3160Prod：<br>dlink-Dws3160Prod            OBJECT IDENTIFIER ::= { dlink-products 124 }</p>
-<h3 id="OBJECT-TYPE定义部分"><a href="#OBJECT-TYPE定义部分" class="headerlink" title="OBJECT-TYPE定义部分"></a>OBJECT-TYPE定义部分</h3><p>OBJECT-TYPE用来定义一个被管理资源的管理对象，对应MIB树中的一个叶子节点<br>例如：<br>sysLocation OBJECT-TYPE<br>&nbsp;&nbsp;&nbsp;&nbsp;SYNTAX  DisplayString (SIZE (0..255))<br>&nbsp;&nbsp;&nbsp;&nbsp;ACCESS  read-write<br>&nbsp;&nbsp;&nbsp;&nbsp;STATUS  mandatory<br>&nbsp;&nbsp;&nbsp;&nbsp;DESCRIPTION<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”The physical location of this node (e.g.,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`telephone closet, 3rd floor’).”<br>&nbsp;&nbsp;&nbsp;&nbsp;::= { system 6 }</p>
-<h3 id="表类型"><a href="#表类型" class="headerlink" title="表类型"></a>表类型</h3><p>表类型是一个特殊的类型声明，表内声明的对象成为列对象，表对象可以看作是一些标量对象的集合，利用SEQUENCE和SEQUENCE OF定义表格和表格中的行，通常来说，表格对象的名字后面加后缀Table，行对象的名字后面加后缀Entry<br>例如：<br>egpNeighTable OBJECT-TYPE<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SYNTAX  SEQUENCE OF EgpNeighEntry<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACCESS  not-accessible<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS  mandatory<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DESCRIPTION<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”The EGP neighbor table.”<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= { egp 5 }</p>
-<p>egpNeighEntry OBJECT-TYPE<br>&nbsp;&nbsp;&nbsp;&nbsp;SYNTAX  EgpNeighEntry<br>&nbsp;&nbsp;&nbsp;&nbsp;ACCESS  not-accessible<br>&nbsp;&nbsp;&nbsp;&nbsp;STATUS  mandatory<br>&nbsp;&nbsp;&nbsp;&nbsp;DESCRIPTION<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”Information about this entity’s relationship with<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a particular EGP neighbor.”<br>&nbsp;&nbsp;&nbsp;&nbsp;INDEX   { egpNeighAddr }<br>&nbsp;&nbsp;&nbsp;&nbsp;::= { egpNeighTable 1 }</p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><h3 id="php页面中文乱码"><a href="#php页面中文乱码" class="headerlink" title="php页面中文乱码"></a>php页面中文乱码</h3><p>页面中出现中文乱码想必Web开发人员或多或少都会遇到，这种问题的出现个人总结为如下几个原因：</p>
+<ol>
+<li>页面中的编码有问题</li>
+<li>你使用的编辑器对你当前文件的编码方式有问题<br>页面中的编码有问题怎么说呢？通常我们会在页面中的头部包含如下语句来指明页面的编码格式：<br>&lt;h1&gt;meta http-equiv=”Content-Type” content=”text/html; charset=utf-8”/&gt;<br>如果你的页面中的编码中包含了中文字符，但是页面的编码方式不包含中文字符，就会出现乱码，一般我们应该将页面的编码格式设置为utf-8<br>如果经过第1种情况以后还是出现乱码，那么可能就是你使用的编辑器对该文件的编码格式有问题，博主出现乱码的问题就是这个原因造成的，比如我使用的是Eclipse for PHP这个IDE作为php文件的编辑器，就需要将该编辑器对php页面的编码格式改成php方式，更改方式如下：</li>
+<li>在菜单中找到Windows -&gt; Preferences -&gt; General -&gt; Content Types</li>
+<li>在右边的窗口中点击”text”选择 “php Content Type” </li>
+<li>在下方的 Default Encoding 中输入入 “uft-8”</li>
+<li>点击update更新，然后再点击ok即可</li>
+</ol>
 
       
 
@@ -217,7 +215,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Miscellanea</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
         		</li>
       		
 		</ul>
@@ -273,7 +275,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.cockg.top/2018/03/01/mib/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.cockg.top/2018/03/10/php-series-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,18 +289,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/04/dcs/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          DCS(-)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/24/ASN1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ASN.1</div>
+    <a href="/2018/03/06/dcs2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DCS(二)</div>
       <i class="icon-circle-right"></i>
     </a>
   
