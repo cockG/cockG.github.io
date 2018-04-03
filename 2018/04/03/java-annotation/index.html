@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/04/03/java-annotation/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Java中的注解非常强大，我们自己在平常的开发中一般比较少使用，但是在各种框架中却会看到他们大量的身影">
-<meta property="og:updated_time" content="2018-04-03T10:03:10.810Z">
+<meta property="og:updated_time" content="2018-04-03T10:16:18.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java注解">
 <meta name="twitter:description" content="Java中的注解非常强大，我们自己在平常的开发中一般比较少使用，但是在各种框架中却会看到他们大量的身影">
@@ -159,6 +159,12 @@
         <p>Java中的注解非常强大，我们自己在平常的开发中一般比较少使用，但是在各种框架中却会看到他们大量的身影<br><a id="more"></a></p>
 <h2 id="怎么定义"><a href="#怎么定义" class="headerlink" title="怎么定义"></a>怎么定义</h2><p>Java中定义个一个注解非常简单，使用关键字@interface即可，如下所示，定义个一个名为SpringCootApp的注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringCootApp &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h2><p>上面我们已经定义了一个最简单的注解，那么，我们该如何使用已经定义好的注解呢？很简单，直接使用@注解名的形式应用到类或者字段，或则局部变量等等，例如，将上述定义的注解应用到类Test上，只需要这么做：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringCootApp</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="有什么用"><a href="#有什么用" class="headerlink" title="有什么用"></a>有什么用</h2><p>你可能会想，将注解应用到类上有什么用呢？如果缺少另一种技术的存在，它确实就是一个花瓶，可能你已经想到是什么技术了，没错，<strong>反射</strong>，反射使得注解在程序运行期间可以被获取，从而应用注解的相关信息做些不同的文章<br>不过，这里请你不要误解成只有通过反射才能获取到注解的相关信息，注解是有生命周期的，它目前定义了3种，如下：</p>
+<ol>
+<li>SOURCE：注解仅存在于源码中，在class字节码文件中不存在</li>
+<li>CLASS：默认的保留策略，注解会在class字节码文件中存在，但运行时无法获</li>
+<li>RUNTIME：注解会在class字节码文件中存在，在运行时可以通过反射获取到<br>从上面就可以看出，其实在编译期间你就可以获取到注解的信息，但是，我们应用最多的场景是RUNTIME</li>
+</ol>
 
       
 
@@ -413,11 +419,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
