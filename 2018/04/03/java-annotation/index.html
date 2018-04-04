@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/04/03/java-annotation/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Java中的注解非常强大，我们自己在平常的开发中一般比较少使用，但是在各种框架中却会看到他们大量的身影">
-<meta property="og:updated_time" content="2018-04-03T10:21:51.756Z">
+<meta property="og:updated_time" content="2018-04-04T03:41:15.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java注解">
 <meta name="twitter:description" content="Java中的注解非常强大，我们自己在平常的开发中一般比较少使用，但是在各种框架中却会看到他们大量的身影">
@@ -163,7 +163,22 @@
 <ol>
 <li>SOURCE：注解仅存在于源码中，在class字节码文件中不存在</li>
 <li>CLASS：默认的保留策略，注解会在class字节码文件中存在，但运行时无法获</li>
-<li>RUNTIME：注解会在class字节码文件中存在，在运行时可以通过反射获取到<br>从上面就可以看出，其实在编译期间你就可以获取到注解的信息，但是，我们应用最多的场景是RUNTIME<br>至于有什么用，这就要归结到注解的本质了，其实我们可以简单将注解理解为一些元信息的集合，如果将它应用到代码之中，它就会为代码增加一些额外的信息，但是不会影响到代码的逻辑</li>
+<li>RUNTIME：注解会在class字节码文件中存在，在运行时可以通过反射获取到<br>从上面就可以看出，其实在编译期间你就可以获取到注解的信息，但是，我们应用最多的场景是RUNTIME<br>从表面上看，可将注解理解为一种标识，对类或者方法起到一种标识作用，从更加深层的较都看，可以将注解理解为元数据信息的集合，为类或者方法添加一些额外的信息（这些信息不会对代码的逻辑的产生影响），你可以在编译或者运行期间获取应用到类或者方法上的相关注解信息，基于此从而可以做一些有趣的事情<br>##上面我们是从怎么定义、怎么用、有什么用三个方面简单的认识了注解，下面，我们从更加具体的语法及使用等方面来了解注解##</li>
+</ol>
+<h2 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h2><p>元注解是一种最基本的注解，可以注解到注解上的注解，元注解有如下5几种：@Retention、@Documented、@Target、@Inherited、@Repeatable</p>
+<h3 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h3><p>可以将他理解为注解的生命周期，它说明了这个注解的存活时间，有如下几种取值：</p>
+<ol>
+<li>SOURCE：注解仅存在于源码中，在编译器编译的时候会忽视</li>
+<li>CLASS：默认的保留策略，注解会在class字节码文件中存在，但不会被加载到JVM中</li>
+<li>RUNTIME：注解会在class字节码文件中存在，会被加载到JVM中，在运行时可以通过反射获取到<h3 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h3>它的作用是能够将注解中的元素包含到Javadoc中<h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3>它的作用指明了注解能够运用到的地方，这种地方对于代码而言的，是指类、方法、属性等等，它有如下几种取值：</li>
+<li>ElementType.ANNOTATION_TYPE：应用到注解上</li>
+<li>ElementType.CONSTRUCTOR：应用到构造方法</li>
+<li>ElementType.FIELD：应用到属性上</li>
+<li>ElementType.LOCAL_VARIABLE：应用到局部变量上</li>
+<li>ElementType.METHOD：应用到方法上</li>
+<li>ElementType.PACKAGE：应用到包上</li>
+<li>ElementType.PARAMETER：应用到方法的参数上</li>
+<li>ElementType.TYPE：应用到类型上，比如类、接口、枚举</li>
 </ol>
 
       
@@ -399,10 +414,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
@@ -415,11 +426,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
