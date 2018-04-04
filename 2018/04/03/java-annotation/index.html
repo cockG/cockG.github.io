@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/04/03/java-annotation/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Java中的注解非常强大，我们自己在平常的开发中一般比较少使用，但是在各种框架中却会看到他们大量的身影">
-<meta property="og:updated_time" content="2018-04-04T03:43:09.512Z">
+<meta property="og:updated_time" content="2018-04-04T03:44:48.118Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java注解">
 <meta name="twitter:description" content="Java中的注解非常强大，我们自己在平常的开发中一般比较少使用，但是在各种框架中却会看到他们大量的身影">
@@ -160,14 +160,14 @@
 <h2 id="怎么定义"><a href="#怎么定义" class="headerlink" title="怎么定义"></a>怎么定义</h2><p>Java中定义个一个注解非常简单，使用关键字@interface即可，如下所示，定义个一个名为SpringCootApp的注解：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringCootApp &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h2><p>上面我们已经定义了一个最简单的注解，那么，我们该如何使用已经定义好的注解呢？很简单，直接使用@注解名的形式应用到类或者字段，或则局部变量等等，例如，将上述定义的注解应用到类Test上，只需要这么做：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringCootApp</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="有什么用"><a href="#有什么用" class="headerlink" title="有什么用"></a>有什么用</h2><p>你可能会想，将注解应用到类上有什么用呢？如果缺少另一种技术的存在，它确实就是一个花瓶，可能你已经想到是什么技术了，没错，<strong>反射</strong>，反射使得注解在程序运行期间可以被获取，从而应用注解的相关信息做些不同的文章<br>不过，这里请你不要误解成只有通过反射才能获取到注解的相关信息，注解是有生命周期的，它目前定义了3种，如下：</p>
-<ol>
+<ul>
 <li>SOURCE：注解仅存在于源码中，在class字节码文件中不存在</li>
 <li>CLASS：默认的保留策略，注解会在class字节码文件中存在，但运行时无法获</li>
 <li>RUNTIME：注解会在class字节码文件中存在，在运行时可以通过反射获取到<br>从上面就可以看出，其实在编译期间你就可以获取到注解的信息，但是，我们应用最多的场景是RUNTIME<br>从表面上看，可将注解理解为一种标识，对类或者方法起到一种标识作用，从更加深层的较都看，可以将注解理解为元数据信息的集合，为类或者方法添加一些额外的信息（这些信息不会对代码的逻辑的产生影响），你可以在编译或者运行期间获取应用到类或者方法上的相关注解信息，基于此从而可以做一些有趣的事情<br>##上面我们是从怎么定义、怎么用、有什么用三个方面简单的认识了注解，下面，我们从更加具体的语法及使用等方面来了解注解##</li>
-</ol>
+</ul>
 <h2 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h2><p>元注解是一种最基本的注解，可以注解到注解上的注解，元注解有如下5几种：@Retention、@Documented、@Target、@Inherited、@Repeatable</p>
 <h3 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h3><p>可以将他理解为注解的生命周期，它说明了这个注解的存活时间，有如下几种取值：</p>
-<ol>
+<ul>
 <li>SOURCE：注解仅存在于源码中，在编译器编译的时候会忽视</li>
 <li>CLASS：默认的保留策略，注解会在class字节码文件中存在，但不会被加载到JVM中</li>
 <li>RUNTIME：注解会在class字节码文件中存在，会被加载到JVM中，在运行时可以通过反射获取到<h3 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h3>它的作用是能够将注解中的元素包含到Javadoc中<h3 id="Target"><a href="#Target" class="headerlink" title="@Target"></a>@Target</h3>它的作用指明了注解能够运用到的地方，这种地方对于代码而言的，是指类、方法、属性等等，它有如下几种取值：</li>
@@ -179,7 +179,7 @@
 <li>ElementType.PACKAGE：应用到包上</li>
 <li>ElementType.PARAMETER：应用到方法的参数上</li>
 <li>ElementType.TYPE：应用到类型上，比如类、接口、枚举</li>
-</ol>
+</ul>
 
       
 
@@ -414,10 +414,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
@@ -430,15 +426,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
