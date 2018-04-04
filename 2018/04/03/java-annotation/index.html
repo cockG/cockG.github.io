@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/04/03/java-annotation/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Java中的注解非常强大，我们自己在平常的开发中一般比较少使用，但是在各种框架中却会看到他们大量的身影">
-<meta property="og:updated_time" content="2018-04-04T07:05:40.392Z">
+<meta property="og:updated_time" content="2018-04-04T07:08:59.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java注解">
 <meta name="twitter:description" content="Java中的注解非常强大，我们自己在平常的开发中一般比较少使用，但是在各种框架中却会看到他们大量的身影">
@@ -181,7 +181,7 @@
 <li>ElementType.TYPE：应用到类型上，比如类、接口、枚举<h3 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h3>它说明了被应用在超类上的注解是否可以被子类继承，<strong>注意它说明的是父子类之间继承而不是注解之间的继承</strong><h3 id="Repeatable"><a href="#Repeatable" class="headerlink" title="Repeatable"></a>Repeatable</h3>它是在JDK1.8的时候新加入的特性，中文意思是可重复的意思，可重复是一个啥意思呢？是指同样一个注解可以被多次应用到一个Target上，比如：我们可以从不同的方面来评论一个人，比如说我小气、帅气、聪明等等，请看下面的例子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@interface</span> Comments &#123;</span><br><span class="line">    Label[] value();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Repeatable</span>(Comments.class)</span><br><span class="line"><span class="meta">@interface</span> Label &#123;</span><br><span class="line">    String title <span class="keyword">default</span> <span class="string">"handsome"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Label</span>(title=<span class="string">"mean"</span>)</span><br><span class="line"><span class="meta">@Label</span>(title=<span class="string">"clever"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="注解的属性"><a href="#注解的属性" class="headerlink" title="注解的属性"></a>注解的属性</h2><p>注解的属性也叫做成员变量，需要注意的是，<strong>注解它只要属性，没有方法</strong>，只不过注解的成员的变量的定义有一点奇特而已，它是以“<strong>无参的方法</strong>”的形式来声明的，<strong>方法名即该成员变量的名字，返回值即该成员变量的类型</strong>，例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> User &#123;</span><br><span class="line">    <span class="function">Integer <span class="title">id</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="注解的属性"><a href="#注解的属性" class="headerlink" title="注解的属性"></a>注解的属性</h2><p>注解的属性也叫做成员变量，需要注意的是，<strong>注解它只要属性，没有方法</strong>，只不过注解的成员变量的定义有一点奇特而已，使得你看上去像是定义了一个方法，它是以“<strong>无参的方法</strong>”的形式来声明的，<strong>方法名即该成员变量的名字，返回值即该成员变量的类型</strong>，例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> User &#123;</span><br><span class="line">    <span class="function">Integer <span class="title">id</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>请注意这里的id和name都是属性，不是方法，他们的类型分别是Integer和String</p>
 
       
@@ -421,15 +421,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">License</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
