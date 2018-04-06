@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/04/05/servers/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="常见的Web服务器有Apache、Nginx、ISS和Tomcat等,在此记录一下使用过程中常见的一些问题">
-<meta property="og:updated_time" content="2018-04-06T02:17:32.765Z">
+<meta property="og:updated_time" content="2018-04-06T02:30:37.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web服务器相关知识">
 <meta name="twitter:description" content="常见的Web服务器有Apache、Nginx、ISS和Tomcat等,在此记录一下使用过程中常见的一些问题">
@@ -157,10 +157,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>常见的Web服务器有Apache、Nginx、ISS和Tomcat等,在此记录一下使用过程中常见的一些问题<br><a id="more"></a></p>
-<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p>Apache HTTP Server（简称Apache）是Apache软件基金会的一个开放源码的网页服务器，是最流行的Web服务器软件之一</p>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p>Apache HTTP Server（简称Apache）是Apache软件基金会的一个开放源码的网页服务器，是最流行的Web服务器软件之一<br><strong>下面所说的情况是基于Window环境</strong></p>
 <h3 id="Apache在本机安装成功并部署项目后，在本机可以访问，但是在同一局域网的其它机器不可以访问？"><a href="#Apache在本机安装成功并部署项目后，在本机可以访问，但是在同一局域网的其它机器不可以访问？" class="headerlink" title="Apache在本机安装成功并部署项目后，在本机可以访问，但是在同一局域网的其它机器不可以访问？"></a>Apache在本机安装成功并部署项目后，在本机可以访问，但是在同一局域网的其它机器不可以访问？</h3><ol>
 <li>找到Apache所在目录下的配置文件httpd.conf文件（一般都是在Apache目录下的conf文件夹中）</li>
-<li>找到Directory配置部分（即&lt;Directory “${INSTALL_DIR}/www/“&gt;配置部分），修改其中的Require local为Require all granted，保存即可<br><strong>注意：修改httpd.conf后记得需要重启一下服务器，如果重启以后通过其它机器访问显示forbidden，请注意查看本机的防火墙是否已经关闭，如果没有关闭，请关闭防火墙</strong></li>
+<li>找到Directory配置部分（即&lt;Directory “${INSTALL_DIR}/www/“&gt;配置节点），修改其中的Require local为Require all granted，保存即可<br><strong>注意：修改httpd.conf后记得需要重启一下服务器，如果重启以后通过其它机器访问显示forbidden，请注意查看本机的防火墙是否已经关闭，如果没有关闭，请关闭防火墙</strong><h3 id="安装IIS以后，Apache不能成功启动？"><a href="#安装IIS以后，Apache不能成功启动？" class="headerlink" title="安装IIS以后，Apache不能成功启动？"></a>安装IIS以后，Apache不能成功启动？</h3></li>
+<li>找到Apache所在目录下的配置文件httpd.conf文件（一般都是在Apache目录下的conf文件夹中）</li>
+<li>找到端口配置部分（一般是Listen 0.0.0.0:80配置节点），将80改为其它端口，比如改成Listen 0.0.0.0:81，保存然后重启Apache服务器<br><strong>注意：IIS服务使用的端口是80端口，所有当安装IIS以后，就会出现80端口占用的情况，导致Apache启动不成功</strong></li>
 </ol>
 
       
@@ -396,6 +398,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
@@ -404,19 +410,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
