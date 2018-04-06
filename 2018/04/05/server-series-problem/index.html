@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://www.cockg.top">
   <title>Web服务器系列—问题 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等,在此记录一下使用过程中常见的一些问题">
+  <meta name="description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等，在此记录一下使用过程中常见的一些问题">
 <meta name="keywords" content="WebServer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web服务器系列—问题">
 <meta property="og:url" content="http://www.cockg.top/2018/04/05/server-series-problem/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等,在此记录一下使用过程中常见的一些问题">
-<meta property="og:updated_time" content="2018-04-06T02:45:57.229Z">
+<meta property="og:description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等，在此记录一下使用过程中常见的一些问题">
+<meta property="og:updated_time" content="2018-04-06T03:41:50.590Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web服务器系列—问题">
-<meta name="twitter:description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等,在此记录一下使用过程中常见的一些问题">
+<meta name="twitter:description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等，在此记录一下使用过程中常见的一些问题">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -156,8 +156,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>常见的Web服务器有Apache、Nginx、IIS和Tomcat等,在此记录一下使用过程中常见的一些问题<br><a id="more"></a></p>
-<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p>Apache HTTP Server（简称Apache）是Apache软件基金会的一个开放源码的网页服务器，是最流行的Web服务器软件之一<br><strong>下面所说的情况是基于Window环境</strong></p>
+        <p>常见的Web服务器有Apache、Nginx、IIS和Tomcat等，在此记录一下使用过程中常见的一些问题<br><a id="more"></a></p>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><strong>下面所说的情况是基于Window环境</strong></p>
 <h3 id="Apache在本机安装成功并部署项目后，在本机可以访问，但是在同一局域网的其它机器不可以访问？"><a href="#Apache在本机安装成功并部署项目后，在本机可以访问，但是在同一局域网的其它机器不可以访问？" class="headerlink" title="Apache在本机安装成功并部署项目后，在本机可以访问，但是在同一局域网的其它机器不可以访问？"></a>Apache在本机安装成功并部署项目后，在本机可以访问，但是在同一局域网的其它机器不可以访问？</h3><ol>
 <li>找到Apache所在目录下的配置文件httpd.conf文件（一般都是在Apache目录下的conf文件夹中）</li>
 <li>找到Directory配置部分（即&lt;Directory “${INSTALL_DIR}/www/“&gt;配置节点），修改其中的Require local为Require all granted，保存即可<br><strong>注意：修改httpd.conf后记得需要重启一下服务器，如果重启以后通过其它机器访问显示forbidden，请注意查看本机的防火墙是否已经关闭，如果没有关闭，请关闭防火墙</strong><h3 id="安装IIS以后，Apache不能成功启动？"><a href="#安装IIS以后，Apache不能成功启动？" class="headerlink" title="安装IIS以后，Apache不能成功启动？"></a>安装IIS以后，Apache不能成功启动？</h3></li>
@@ -423,15 +423,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">WebServer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -440,10 +444,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">WebServer</a>
               </li>
              
               <li class="article-tag-list-item">

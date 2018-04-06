@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://www.cockg.top">
   <title>Web服务器系列—简介 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cockG&apos;s blogs">
+  <meta name="description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等，了解各个服务对于我们查找问题是非常有利的">
 <meta name="keywords" content="WebServer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web服务器系列—简介">
 <meta property="og:url" content="http://www.cockg.top/2018/04/06/server-series-about/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="cockG&apos;s blogs">
-<meta property="og:updated_time" content="2018-04-06T02:43:47.179Z">
+<meta property="og:description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等，了解各个服务对于我们查找问题是非常有利的">
+<meta property="og:updated_time" content="2018-04-06T05:43:42.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web服务器系列—简介">
-<meta name="twitter:description" content="cockG&apos;s blogs">
+<meta name="twitter:description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等，了解各个服务对于我们查找问题是非常有利的">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -156,7 +156,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>常见的Web服务器有Apache、Nginx、IIS和Tomcat等，了解各个服务对于我们查找问题是非常有利的<br><a id="more"></a></p>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p>Apache HTTP Server（简称Apache）是Apache软件基金会的一个开放源码的网页服务器，是最流行的Web服务器软件之一</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>Apache的配置文件一般位于安装目录下的conf目录下，文件名为httpd.conf，下面对配置文件中的每个配置项进行简单的介绍</p>
+<ul>
+<li>ServerRoot：httpd查找配置文件的相对路径</li>
+<li>Listen：监听端口，可以重复定义多次从而监听多个端口，不过需要注意SELinux和防火墙的问题</li>
+<li>Include：加载其它的配置文件，可以使用绝对路径和相对路径，相对路径是相对于ServerRoot定义的路径</li>
+<li>User 和 Group：运行Apache程序时的用户名和组名</li>
+<li>ServerAdmin：管理员的邮箱地址</li>
+<li>ServerName：主机名称和端口，主要作用用于重定向时，服务器区分访问的域名是自己还是别的主机</li>
+<li>&lt;Directory/&gt;：关于目录的一些配置，有关目录的访问权限都在这里定义，其中AllowOverride指明Apache服务器是否去查找.htaccess文件作为配置文件，如果设置为none，那么服务器将会忽略，如果设置为All，那么将使用.htaccess文件中的指令代替原配置文件中的指令，其中Require指明对该目录的访问权限，如果为local，则只能通过服务器所在的机器访问，如果为all granted，则能接受其它机器的访问，如果为all denied，则拒绝所有的访问</li>
+<li>DocumentRoot：定义存放Web程序的根目录</li>
+</ul>
+
       
 
       
@@ -406,15 +419,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">WebServer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -423,10 +440,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">WebServer</a>
               </li>
              
               <li class="article-tag-list-item">
