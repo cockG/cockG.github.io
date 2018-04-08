@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.cockg.top">
-  <title>DCS(二) | Blog</title>
+  <title>Python学习系列一 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DCS是英文D-Link Certified Specialist的首字母缩写，是D-Link公司的一种网络认证，就如同Cisco公司推出的思科认证一样">
-<meta name="keywords" content="DCS">
+  <meta name="description" content="人生苦短，我用python">
+<meta name="keywords" content="Python,Programming">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DCS(二)">
-<meta property="og:url" content="http://www.cockg.top/2018/03/06/dcs2/index.html">
+<meta property="og:title" content="Python学习系列一">
+<meta property="og:url" content="http://www.cockg.top/2018/04/08/python-series-part1/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="DCS是英文D-Link Certified Specialist的首字母缩写，是D-Link公司的一种网络认证，就如同Cisco公司推出的思科认证一样">
-<meta property="og:image" content="http://www.cockg.top/img/d-link_switches_1000_series.png">
-<meta property="og:updated_time" content="2018-03-06T13:58:35.728Z">
+<meta property="og:description" content="人生苦短，我用python">
+<meta property="og:updated_time" content="2018-04-08T12:57:19.192Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DCS(二)">
-<meta name="twitter:description" content="DCS是英文D-Link Certified Specialist的首字母缩写，是D-Link公司的一种网络认证，就如同Cisco公司推出的思科认证一样">
-<meta name="twitter:image" content="http://www.cockg.top/img/d-link_switches_1000_series.png">
+<meta name="twitter:title" content="Python学习系列一">
+<meta name="twitter:description" content="人生苦短，我用python">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -138,32 +136,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-dcs2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python-series-part1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      DCS(二)
+      Python学习系列一
     </h1>
   
 
         
-        <a href="/2018/03/06/dcs2/" class="archive-article-date">
-  	<time datetime="2018-03-06T03:05:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
+        <a href="/2018/04/08/python-series-part1/" class="archive-article-date">
+  	<time datetime="2018-04-08T12:37:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DCS是英文D-Link Certified Specialist的首字母缩写，是D-Link公司的一种网络认证，就如同Cisco公司推出的思科认证一样<br><a id="more"></a></p>
-<h1 id="D-Link交换机产品"><a href="#D-Link交换机产品" class="headerlink" title="D-Link交换机产品"></a>D-Link交换机产品</h1><ul>
-<li>非管理型交换机（Unmanaged Switches）</li>
-<li>智能交换机（Smart Switches ）</li>
-<li>标准管理交换机（Standard Managed Switches）</li>
-<li>XStack Switches<h2 id="Unmanaged-Switches"><a href="#Unmanaged-Switches" class="headerlink" title="Unmanaged Switches"></a>Unmanaged Switches</h2>包含两个系列：DES-1000和DGS-1000<br><img src="/img/d-link_switches_1000_series.png" alt="Unmanaged Switches系列"></li>
+        <p>人生苦短，我用python<br><a id="more"></a></p>
+<h2 id="Python解析器"><a href="#Python解析器" class="headerlink" title="Python解析器"></a>Python解析器</h2><p>当我们运行后缀名为.py的Python文件时，就需要用到Python解释器（Interpreter），Python解释器有很多个，常用的是CPython（从Python官网下载的安装程序包含的解释器就是CPython）<br>注：<strong>本学习系列操作系统为Windows</strong></p>
+<h3 id="进入解释器"><a href="#进入解释器" class="headerlink" title="进入解释器"></a>进入解释器</h3><p>按下Win + R打开命令对话框，输入cmd，进入命令行界面，然后再输入Python，即可进入Python的交互模式，Python交互模式下它的输入提示符是&gt;&gt;&gt;<br><a href="/img/python_Interactive_model.png">Python交互模式</a><br>如果你要退出Python的交互模式，有两种方式：</p>
+<ul>
+<li>可以按下Ctrl + Z组合键，然后按下Enter键</li>
+<li>输入quit()或者exit()，然后按下Enter键<h3 id="指定源文件都的编码"><a href="#指定源文件都的编码" class="headerlink" title="指定源文件都的编码"></a>指定源文件都的编码</h3>m默认情况下，Python源文件是以UTF-8进行编码的，你可以显示的声明或者修改为其它的编码方式，只需要在源文件的第一行加入如下一行即可：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: encoding -*-</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -209,7 +208,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DCS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
         		</li>
       		
 		</ul>
@@ -265,7 +268,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.cockg.top/2018/03/06/dcs2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.cockg.top/2018/04/08/python-series-part1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +282,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/10/php-series-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          学习PHP遇到的问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/04/dcs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">DCS(-)</div>
+    <a href="/2018/04/06/server-series-apache/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Web服务器系列—Apache简介</div>
       <i class="icon-circle-right"></i>
     </a>
   
