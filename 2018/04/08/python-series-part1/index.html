@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/04/08/python-series-part1/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="人生苦短，我用python">
-<meta property="og:updated_time" content="2018-04-08T13:08:53.951Z">
+<meta property="og:updated_time" content="2018-04-08T13:27:23.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习系列一">
 <meta name="twitter:description" content="人生苦短，我用python">
@@ -158,13 +158,14 @@
       
         <p>人生苦短，我用python<br><a id="more"></a></p>
 <h2 id="Python解析器"><a href="#Python解析器" class="headerlink" title="Python解析器"></a>Python解析器</h2><p>当我们运行后缀名为.py的Python文件时，就需要用到Python解释器（Interpreter），Python解释器有很多个，常用的是CPython（从Python官网下载的安装程序包含的解释器就是CPython）<br>注：<strong>本学习系列操作系统为Windows</strong></p>
-<h3 id="进入解释器"><a href="#进入解释器" class="headerlink" title="进入解释器"></a>进入解释器</h3><p>按下Win + R打开命令对话框，输入cmd，进入命令行界面，然后再输入Python，即可进入Python的交互模式，Python交互模式下它的输入提示符是&gt;&gt;&gt;<br><a href="/img/python_Interactive_model.png">Python交互模式</a><br>如果你要退出Python的交互模式，有两种方式：</p>
+<h3 id="进入解释器"><a href="#进入解释器" class="headerlink" title="进入解释器"></a>进入解释器</h3><p>按下Win + R打开命令对话框，输入cmd，进入命令行界面，然后再输入Python，即可进入Python的交互模式，Python交互模式下它的输入提示符是&gt;&gt;&gt;<br><a href="/img/python_part1_interactive.png">Python交互模式</a><br>如果你要退出Python的交互模式，有两种方式：</p>
 <ul>
 <li>可以按下Ctrl + Z组合键，然后按下Enter键</li>
 <li>输入quit()或者exit()，然后按下Enter键<h3 id="指定源文件都的编码"><a href="#指定源文件都的编码" class="headerlink" title="指定源文件都的编码"></a>指定源文件都的编码</h3>m默认情况下，Python源文件是以UTF-8进行编码的，你可以显示的声明或者修改为其它的编码方式，只需要在源文件的第一行加入如下一行即可：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: encoding -*-</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>其中encoding的值参见Python官网给出的<a href="https://docs.python.org/3/library/codecs.html#module-codecs" target="_blank" rel="noopener">codecs</a></p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h3><p>2，20的类型是int，5.0，1.6的类型是float，它们可以进行一些基本的算术运行，比如+、-、<em>、/和%（求余），它还提供了另外两个操作符，//（求商）和*</em>（幂运算）<br>当一个操作符的操作数含有int和float时，会将其中的int操作数转换成float然后再进行计算<br>另一个需要注意的是，在交互模式下，_是一个变量，代表了在交互模式下最后一次被打印出来的值<br><a href="/img/python_part1_number.png">Numbers</a></p>
 
       
 
@@ -403,6 +404,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
@@ -411,19 +416,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
