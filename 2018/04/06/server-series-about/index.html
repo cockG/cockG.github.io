@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/04/06/server-series-about/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等，了解各个服务对于我们查找问题是非常有利的">
-<meta property="og:updated_time" content="2018-04-08T03:19:55.787Z">
+<meta property="og:updated_time" content="2018-04-08T03:46:26.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web服务器系列—简介">
 <meta name="twitter:description" content="常见的Web服务器有Apache、Nginx、IIS和Tomcat等，了解各个服务对于我们查找问题是非常有利的">
@@ -168,6 +168,13 @@
 <li>ServerName：主机名称和端口，主要作用用于重定向时，服务器区分访问的域名是自己还是别的主机</li>
 <li>&lt;Directory/&gt;：关于目录的一些配置，有关目录的访问权限都在这里定义，其中AllowOverride指明Apache服务器是否去查找.htaccess文件作为配置文件，如果设置为none，那么服务器将会忽略，如果设置为All，那么将使用.htaccess文件中的指令代替原配置文件中的指令，其中Require指明对该目录的访问权限，如果为local，则只能通过服务器所在的机器访问，如果为all granted，则能接受其它机器的访问，如果为all denied，则拒绝所有的访问</li>
 <li>DocumentRoot：定义存放Web程序的根目录，Directory目录如果是相对路径，则此相对就是相对于DocumentRoot</li>
+<li>&lt;IfModule dir_module&gt;：在加载了dir_module模块后才执行，DirectoryIndex配置指令后面的值可以有多个，值得含义为URL访问时进入目录是应该寻找哪一个文件，多个时按照顺序查找，直到查找到</li>
+<li>&lt;Files “.ht*”&gt;：对所有安全相关的敏感文件的相关访问权限设置</li>
+<li>ErrorLog：错误文件的存放路径</li>
+<li>LogLevel：设置日志级别，也就是说达到该日志级别才记录到日志中</li>
+<li>&lt;IfModule log_config_module&gt;：定义日志的记录格式，可以进行修改，设置为自己想要的输出格式</li>
+<li>&lt;IfModule alias_module&gt;：在同一个域名下，在不同目录下有不同的网站，通过指定Alias，使得可以在同一个域名下通过访问不同的名称从而访问到不同的网站</li>
+<li>&lt;IfModule mime_module&gt;：多媒体英特网邮件扩展，用来设置相关的元数据信息</li>
 </ul>
 
       
@@ -407,19 +414,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">WebServer</a>
+                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,6 +434,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
               </li>
              
@@ -439,7 +446,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color5">WebServer</a>
               </li>
              
               <li class="article-tag-list-item">
