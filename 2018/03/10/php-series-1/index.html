@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/03/10/php-series-1/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="最近了解一下传说中的PHP，并且开始使用它开发一个小小的Web程序来练练手，其中碰到了一些问题，在此记录和大家分享一下">
-<meta property="og:updated_time" content="2018-03-10T07:12:30.013Z">
+<meta property="og:updated_time" content="2018-04-08T10:07:04.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习PHP遇到的问题">
 <meta name="twitter:description" content="最近了解一下传说中的PHP，并且开始使用它开发一个小小的Web程序来练练手，其中碰到了一些问题，在此记录和大家分享一下">
@@ -171,7 +171,11 @@
 <li>在菜单中找到Windows -&gt; Preferences -&gt; General -&gt; Content Types</li>
 <li>在右边的窗口中点击”text”选择 “php Content Type” </li>
 <li>在下方的 Default Encoding 中输入入 “uft-8”</li>
-<li>点击update更新，然后再点击ok即可</li>
+<li>点击update更新，然后再点击ok即可<h3 id="WampServer中MySQL数据库中文乱码"><a href="#WampServer中MySQL数据库中文乱码" class="headerlink" title="WampServer中MySQL数据库中文乱码"></a>WampServer中MySQL数据库中文乱码</h3>注：<strong>中文数据在MySQL数据库中显示是正常的，但是通过PHP查询出来以后在页面上显示的时候就乱码了</strong></li>
+<li>找到MySQL安装目录下的my.ini配置文件</li>
+<li>在[client]下添加配置项：default-character-set=utf8</li>
+<li>在[wampmysqld]下添加配置项：character_set_server=utf8</li>
+<li>重启服务器</li>
 </ul>
 
       
@@ -420,11 +424,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
