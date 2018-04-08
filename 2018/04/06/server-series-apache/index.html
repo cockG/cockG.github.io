@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/04/06/server-series-apache/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Apache HTTP Server（简称Apache）是Apache软件基金会的一个开放源码的网页服务器，是最流行的Web服务器软件之一">
-<meta property="og:updated_time" content="2018-04-08T06:34:48.070Z">
+<meta property="og:updated_time" content="2018-04-08T06:37:08.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web服务器系列—Apache简介">
 <meta name="twitter:description" content="Apache HTTP Server（简称Apache）是Apache软件基金会的一个开放源码的网页服务器，是最流行的Web服务器软件之一">
@@ -173,7 +173,7 @@
 <li>LogLevel：设置日志级别，也就是说达到该日志级别才记录到日志中</li>
 <li>&lt;IfModule log_config_module&gt;：定义日志的记录格式，可以进行修改，设置为自己想要的输出格式</li>
 <li>&lt;IfModule alias_module&gt;：在同一个域名下，在不同目录下有不同的网站，通过指定Alias，使得可以在同一个域名下通过访问不同的名称从而访问到不同的网站</li>
-<li>&lt;IfModule mime_module&gt;：多媒体英特网邮件扩展，用来设置相关的元数据信息<h2 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h2>认证可以是明文形式或者是摘要算法形式，在认证时，服务器响应吗为401，拒绝客户端请求，并需要客户端填入账号和密码后进行认证，服务器做认证的账号是虚拟账号，不是服务器系统的账号，可以存放在特定的文件系统中，或者数据库中，连接数据库需要相应的数据库模块为httpd提供接口等支持，首先在需要认证的目录下添加如下信息：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost 192.168.66.142:80&gt;</span><br><span class="line">    ServerName www.vhost.com</span><br><span class="line">    DocumentRoot &quot;/vhosts/www1&quot;</span><br><span class="line">        &lt;Directory &quot;/vhosts/www1&quot;&gt;</span><br><span class="line">            Options None</span><br><span class="line">            AllowOverride None</span><br><span class="line">            Require all granted</span><br><span class="line">            &lt;/DIrectory&gt;</span><br><span class="line">            &lt;Directory&quot;/vhosts/www1/admin&quot;&gt;</span><br><span class="line">            Options None</span><br><span class="line">            AllowOverride None</span><br><span class="line">            AuthType basic</span><br><span class="line">            AuthName &quot;Admin Area, Enter your name/password&quot;</span><br><span class="line">            AuthUserFile &quot;/etc/httpd/conf/.htpasswd&quot;</span><br><span class="line">            Require valid-user</span><br><span class="line">        &lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<li>&lt;IfModule mime_module&gt;：多媒体英特网邮件扩展，用来设置相关的元数据信息<h2 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h2>认证可以是明文形式或者是摘要算法形式，在认证时，服务器响应吗为401，拒绝客户端请求，并需要客户端填入账号和密码后进行认证，服务器做认证的账号是虚拟账号，不是服务器系统的账号，可以存放在特定的文件系统中，或者数据库中，连接数据库需要相应的数据库模块为httpd提供接口等支持，首先在需要认证的目录下添加如下信息：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost 192.168.66.142:80&gt;</span><br><span class="line">    ServerName www.vhost.com</span><br><span class="line">    DocumentRoot &quot;/vhosts/www1&quot;</span><br><span class="line">        &lt;Directory &quot;/vhosts/www1&quot;&gt;</span><br><span class="line">            Options None</span><br><span class="line">            AllowOverride None</span><br><span class="line">            Require all granted</span><br><span class="line">        &lt;/DIrectory&gt;</span><br><span class="line">        &lt;Directory&quot;/vhosts/www1/admin&quot;&gt;</span><br><span class="line">            Options None</span><br><span class="line">            AllowOverride None</span><br><span class="line">            AuthType basic</span><br><span class="line">            AuthName &quot;Admin Area, Enter your name/password&quot;</span><br><span class="line">            AuthUserFile &quot;/etc/httpd/conf/.htpasswd&quot;</span><br><span class="line">            Require valid-user</span><br><span class="line">        &lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>然后使用htpasswd命令生成.passwd文件，例如：htpasswd -c /etc/httpd/conf/.htpasswd username<br>htpasswd的语法如下：<br>htpasswd [OPTIONS] /PATH/TO/HTPASSWD_FILE USERNAME [PASSWORD]<br>其中，OPTIONS有如下一一些值：</p>
@@ -426,15 +426,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">License</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -450,15 +450,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
