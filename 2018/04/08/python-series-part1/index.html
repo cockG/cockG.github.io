@@ -9,7 +9,7 @@
   <title>Python学习系列一 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="人生苦短，我用python">
-<meta name="keywords" content="Programming,Python">
+<meta name="keywords" content="Python,Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习系列一">
 <meta property="og:url" content="http://www.cockg.top/2018/04/08/python-series-part1/index.html">
@@ -17,7 +17,7 @@
 <meta property="og:description" content="人生苦短，我用python">
 <meta property="og:image" content="http://www.cockg.top/img/python_part1_interactive.png">
 <meta property="og:image" content="http://www.cockg.top/img/python_part1_number.png">
-<meta property="og:updated_time" content="2018-04-10T12:49:57.539Z">
+<meta property="og:updated_time" content="2018-04-12T13:55:13.824Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习系列一">
 <meta name="twitter:description" content="人生苦短，我用python">
@@ -172,8 +172,13 @@
 <h3 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h3><p>字符串是以单引号’或者双引号”括起来的文本，比如’Hello’、”World”，’’或””只是表示字符串的一种方式，并不是字符串的一部分，也就是’Hello’只有H，e，l，l，o这5个字符，对于一些特殊字符可以使用反斜杠\进行转义，Python提供了一个用于打印出可读性更好的print()函数（它会对一些转义字符进行转义），如果你不想让print函数对输出进行转义，可以在在字符串前面加上一个r’，例如：print(r’C:\some\name’)将会输出字符串C:\some\name，而不会对\n（换行）进行转义<br>连接字符串可以使用+号，当然，你也可以直接在字符串之间用空格连接，但是要注意不能在一个变量和字符串之间使用空格进行字符串的连接，还可以用一个整数n乘以一个字符串从而将字符串重复n遍<br>Python中的字符串还支持通过索引获取字串，索引位置是从0开始的，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>word = <span class="string">'Python'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>word[<span class="number">0</span>]</span><br><span class="line"><span class="string">'P'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>word[<span class="number">-1</span>]</span><br><span class="line"><span class="string">'n'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>word[:<span class="number">2</span>]</span><br><span class="line"><span class="string">'Py'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>word[<span class="number">4</span>:<span class="number">42</span>]</span><br><span class="line"><span class="string">'on'</span></span><br></pre></td></tr></table></figure></p>
 <p>len()函数用于求字符串的长度</p>
 <h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>list是有序元素的集合，注意list中的元素必须是同一种类型，list是可变的，也就是可以更改其中的某一个值，例如colors就是一个list：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'orange'</span>, <span class="string">'black'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors</span><br><span class="line">[<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'orange'</span>, <span class="string">'black'</span>]</span><br></pre></td></tr></table></figure></p>
-<p>通过索引获取子序列，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">[<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'orange'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors[:]</span><br><span class="line">[<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'orange'</span>, <span class="string">'black'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>通过索引获取子序列，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">[<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'orange'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors[:]</span><br><span class="line">[<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'orange'</span>, <span class="string">'black'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors[:] = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors</span><br><span class="line">[]</span><br></pre></td></tr></table></figure></p>
 <p>通过+进行list的连接，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors + [<span class="string">'white'</span>, <span class="string">'purple'</span>]</span><br><span class="line">[<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'orange'</span>, <span class="string">'black'</span>, <span class="string">'white'</span>, <span class="string">'purple'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>通过append方法为list添加元素，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>colors.append(<span class="string">'rice white'</span>)</span><br><span class="line">[<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'orange'</span>, <span class="string">'black'</span>, <span class="string">'white'</span>, <span class="string">'purple'</span>, <span class="string">'rice white'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>len()方法求list的长度，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(colors)</span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure></p>
+<p>list中可以包含其它的list，相当于是一个多维数组，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = [a, n]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">[[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[<span class="number">0</span>]</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure></p>
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><p>if语句的完整形式如下：<br>if &lt;条件判断1&gt;:<br>    &lt;执行1&gt;<br>elif &lt;条件判断2&gt;:<br>    &lt;执行2&gt;<br>elif &lt;条件判断3&gt;:<br>    &lt;执行3&gt;<br>else:<br>    &lt;执行4&gt;</p>
+<h2 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h2><p>for语句用于按序遍历任何序列（list和string）,例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>words = [<span class="string">'cat'</span>, <span class="string">'window'</span>, <span class="string">'defenestrate'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> w <span class="keyword">in</span> words:</span><br><span class="line"><span class="meta">... </span>    print(w, len(w))</span><br><span class="line">...</span><br><span class="line">cat <span class="number">3</span></span><br><span class="line">window <span class="number">6</span></span><br><span class="line">defenestrate <span class="number">12</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -218,11 +223,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
         		</li>
       		
 		</ul>
@@ -412,15 +417,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -428,7 +425,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -440,19 +441,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">WebServer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
