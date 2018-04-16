@@ -17,7 +17,7 @@
 <meta property="og:description" content="人生苦短，我用python">
 <meta property="og:image" content="http://www.cockg.top/img/python_part1_interactive.png">
 <meta property="og:image" content="http://www.cockg.top/img/python_part1_number.png">
-<meta property="og:updated_time" content="2018-04-12T13:55:13.824Z">
+<meta property="og:updated_time" content="2018-04-16T13:58:41.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习系列一">
 <meta name="twitter:description" content="人生苦短，我用python">
@@ -179,6 +179,16 @@
 <p>list中可以包含其它的list，相当于是一个多维数组，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = [a, n]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">[[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[<span class="number">0</span>]</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure></p>
 <h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><p>if语句的完整形式如下：<br>if &lt;条件判断1&gt;:<br>    &lt;执行1&gt;<br>elif &lt;条件判断2&gt;:<br>    &lt;执行2&gt;<br>elif &lt;条件判断3&gt;:<br>    &lt;执行3&gt;<br>else:<br>    &lt;执行4&gt;</p>
 <h2 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h2><p>for语句用于按序遍历任何序列（list和string）,例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>words = [<span class="string">'cat'</span>, <span class="string">'window'</span>, <span class="string">'defenestrate'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> w <span class="keyword">in</span> words:</span><br><span class="line"><span class="meta">... </span>    print(w, len(w))</span><br><span class="line">...</span><br><span class="line">cat <span class="number">3</span></span><br><span class="line">window <span class="number">6</span></span><br><span class="line">defenestrate <span class="number">12</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="range-函数"><a href="#range-函数" class="headerlink" title="range()函数"></a>range()函数</h2><p>range函数是Python内置的函数，可以按照一定的规则生成整数序列<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>):</span><br><span class="line"><span class="meta">... </span>   print(i)</span><br><span class="line">...</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>可以指定步长，即不是生成连续的整数序列<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">6</span>, <span class="number">3</span>):</span><br><span class="line"><span class="meta">... </span>   print(i)</span><br><span class="line">...</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<p>其中，0是序列的起始值（包含在内），6是序列的结束值（不包含在内），3是步长<br>所以，有时候我们可以这样遍历一个list<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="string">'Mary'</span>, <span class="string">'had'</span>, <span class="string">'a'</span>, <span class="string">'little'</span>, <span class="string">'lamb'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(len(a)):</span><br><span class="line"><span class="meta">... </span>   print(i, a[i])</span><br><span class="line">...</span><br><span class="line"><span class="number">0</span> Mary</span><br><span class="line"><span class="number">1</span> had</span><br><span class="line"><span class="number">2</span> a</span><br><span class="line"><span class="number">3</span> little</span><br><span class="line"><span class="number">4</span> lamb</span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是，range()返回的不是一个数组，它是一个按顺序排列可被遍历的对象，为了节约空间，它不会生成list，我们称之为iterable对象，可以使用list函数从iterable对象创建一个list<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(range(<span class="number">5</span>))</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure></p>
+<h2 id="pass语句"><a href="#pass语句" class="headerlink" title="pass语句"></a>pass语句</h2><p>pass语句意味着什么事情也不做，它可以用在语法需要但是程序不需要处理逻辑的地方，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line"><span class="meta">... </span>   <span class="keyword">pass</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>pass可以用于类中，用于创建一个最小的类，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">MiniClass</span>:</span></span><br><span class="line"><span class="meta">... </span>   <span class="keyword">pass</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>pass还可以用于函数或者条件体中作为占位符，pass默认会被忽略，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">initlog</span><span class="params">(*args)</span>:</span></span><br><span class="line"><span class="meta">... </span>   <span class="keyword">pass</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><p>函数使用关键字def定义，接着需要指明函数的名称和一对括号指明的参数，然后以一对分号结尾，函数体需要令其一行并且注意必须进行缩进，函数可以有有返回值，但是无需在定义的时候指明，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">printMsg</span><span class="params">(msg)</span>:</span></span><br><span class="line"><span class="meta">... </span>   print(msg)</span><br><span class="line"><span class="meta">... </span>   <span class="keyword">return</span> msg</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h2 id="关于函数的参数"><a href="#关于函数的参数" class="headerlink" title="关于函数的参数"></a>关于函数的参数</h2><h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>可以在定义函数的时候为参数指定默认值，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">printMsg</span><span class="params">(msgType, msg=<span class="string">'Hello World'</span>)</span>:</span></span><br><span class="line"><span class="meta">... </span>   <span class="keyword">if</span> msgType == <span class="string">'error'</span>:</span><br><span class="line"><span class="meta">... </span>       print(<span class="string">'error:'</span> + msg)</span><br><span class="line"><span class="meta">... </span>   <span class="keyword">else</span>:</span><br><span class="line"><span class="meta">... </span>       print(<span class="string">'info:'</span> + msg)</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>在调用的时候可以给默认参数指定值，也可以不用指定，如果不指定值，则会使用默认的值，例如：<br>printMsg(‘error’)<br>printMsg(‘error’, ‘There is an error’)</p>
 
       
 
@@ -421,7 +431,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,15 +439,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,7 +459,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,11 +467,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
