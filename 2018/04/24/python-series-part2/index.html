@@ -6,24 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.cockg.top">
-  <title>ASN.1 | Blog</title>
+  <title>python-series-part2 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
-<meta name="keywords" content="Network">
+  <meta name="description" content="cockG&apos;s blogs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ASN.1">
-<meta property="og:url" content="http://www.cockg.top/2018/02/24/ASN1/index.html">
+<meta property="og:title" content="python-series-part2">
+<meta property="og:url" content="http://www.cockg.top/2018/04/24/python-series-part2/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
-<meta property="og:image" content="http://www.cockg.top/img/ber_type_one.png">
-<meta property="og:image" content="http://www.cockg.top/img/ber_tag_class.png">
-<meta property="og:image" content="http://www.cockg.top/img/ber_p_c.png">
-<meta property="og:image" content="http://www.cockg.top/img/ber_length_forms.png">
-<meta property="og:updated_time" content="2018-02-26T10:30:23.505Z">
+<meta property="og:description" content="cockG&apos;s blogs">
+<meta property="og:updated_time" content="2018-04-24T13:35:05.621Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ASN.1">
-<meta name="twitter:description" content="ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的">
-<meta name="twitter:image" content="http://www.cockg.top/img/ber_type_one.png">
+<meta name="twitter:title" content="python-series-part2">
+<meta name="twitter:description" content="cockG&apos;s blogs">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -141,94 +135,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ASN1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python-series-part2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ASN.1
+      python-series-part2
     </h1>
   
 
         
-        <a href="/2018/02/24/ASN1/" class="archive-article-date">
-  	<time datetime="2018-02-24T08:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-24</time>
+        <a href="/2018/04/24/python-series-part2/" class="archive-article-date">
+  	<time datetime="2018-04-24T13:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ASN.1是一种ISO/ITU-T标准，是一个高级描述语言，描述数据类型、结构、组织和编码方法等，包含语法符号和编码规则两大部分，SNMP中的PDU和MIB就是使用ASN.1进行描述的<br><a id="more"></a></p>
-<h2 id="什么是ASN-1"><a href="#什么是ASN-1" class="headerlink" title="什么是ASN.1"></a>什么是ASN.1</h2><p><a href="https://en.wikipedia.org/wiki/Abstract_Syntax_Notation_One" target="_blank" rel="noopener">维基百科中对ASN.1的定义</a>如下：<br>Abstract Syntax Notation.One (ASN.1) is an interface description language[dubious – discuss] for defining data structures that can be serialized and deserialized in a standard, cross-platform way. It’s broadly used in telecommunications and computer networking, and especially in cryptography<br>其大意为ANS.1是用于定义可被序列化和反序列化的数据结构的描述性语言，它被广泛应用于电信、计算机网络和密码等领域</p>
-<h2 id="ASN-1常见预定义的数据类型"><a href="#ASN-1常见预定义的数据类型" class="headerlink" title="ASN.1常见预定义的数据类型"></a>ASN.1常见预定义的数据类型</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">编码值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">BOOLEAN</td>
-<td style="text-align:center">0x01</td>
-</tr>
-<tr>
-<td style="text-align:center">INTEGER</td>
-<td style="text-align:center">0x02</td>
-</tr>
-<tr>
-<td style="text-align:center">OCTET STRING</td>
-<td style="text-align:center">0x04</td>
-</tr>
-<tr>
-<td style="text-align:center">OBJECT IDENTIFIER</td>
-<td style="text-align:center">0x06</td>
-</tr>
-<tr>
-<td style="text-align:center">REAL (float)</td>
-<td style="text-align:center">0x09</td>
-</tr>
-</tbody>
-</table>
-<h2 id="BER"><a href="#BER" class="headerlink" title="BER"></a>BER</h2><p>ASN.1有多种标准编码规则，例如：GER、PER、OER和JER等，编码规则用于将ASN.1语法表示的抽象数据转换成具体的比特流，经BER编码后的数据结构都由3个域构成：标识域（Type）+ 长度域（Length）+ 值域（Value），即TLV，在SNMP协议中，ASN.1采用BER标准化编码规则对传输数据进行编码</p>
-<h3 id="标识域（Type）的编码"><a href="#标识域（Type）的编码" class="headerlink" title="标识域（Type）的编码"></a>标识域（Type）的编码</h3><p>标识域指明数据的类型，它占用一个或者多个字节，我们常见的情况是Type只有一个字节（多字节的比较复杂，这里不做阐述），如下图所示：<br><img src="/img/ber_type_one.png" alt="Type的编码"><br>其中，7-8位表示Tag class，第6位表示该元素的类型是primitive还是constructed，1-5位表示Tag number<br>Tag class可能的取值如下：<br><img src="/img/ber_tag_class.png" alt="Tag class的可能取值"><br>P/C可能的取值如下：<br><img src="/img/ber_p_c.png" alt="P/C的可能取值"></p>
-<h3 id="长度域（Length）的编码"><a href="#长度域（Length）的编码" class="headerlink" title="长度域（Length）的编码"></a>长度域（Length）的编码</h3><p>Length指明值域（Value）的长度，是不定长的，有两种格式：definite form（定型）和indefinite form（不定型），如下图所示：<br><img src="/img/ber_length_forms.png" alt="Length的两种格式"><br>其中，对于definite form的格式，又可以分为两种：</p>
-<ul>
-<li>short form（短格式），对应上图中的Definite,short</li>
-<li>long form（长格式），对应上图中的Definite,long</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">short form</th>
-<th style="text-align:center">long form</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">有且只有一个字节，第8位是固定值0，1-7位表示值域的长度</td>
-<td style="text-align:center">至少有两个字节，第一个字节的第8位是固定值1，1-7位的值表示第一个字节后面还有多少个字节，后面字节的值就是表示值域的长度</td>
-</tr>
-</tbody>
-</table>
-<h2 id="BER应用实例——SNMP报文分析"><a href="#BER应用实例——SNMP报文分析" class="headerlink" title="BER应用实例——SNMP报文分析"></a>BER应用实例——SNMP报文分析</h2><p>SNMP报文的分析实质上就是根据SNMP格式和BER对报文中的字节进行相应的解码<br>例如有如下一段SNMP报文：<br>30 2c 02 01 01 04 06 70  75 62 6c 69 63 a1 1f 02<br>04 22 70 8b d4 02 01 00  02 01 00 30 11 30 0f 06<br>0b 2b 06 01 04 01 8c a6  5e 01 01 01 05 00<br><strong>分析SNMP报文时我们需要把握一个核心就是TLV</strong></p>
-<ul>
-<li>30：表示这是一个SNMP报文</li>
-<li>2c：表示该SNMP报文的长度</li>
-<li>02 01 01：表示Version的编码值（采用TLV），02（即T）表示该值的类型是INTEGER，01（即L）表该值的长度，01（即V）表示协议的版本为1，但是<strong>SNMP协议规定写入版本字段的是真是版本号减1的值</strong>，即这里真正的版本号值是2，所以这是一个SNMPv2c的SNMP协议</li>
-<li>04 06 70 75 62 6c 69 63：表示Community的编码值，04表示该值的类型是OCTET STRING，06表示该值的长度，70 75 62 6c 69 63表示Community的具体值</li>
-<li>a1 1f：表示PDU类型的编码值，一般占用0-3个字节，a1（即T）表示PDU的类型是get-next-request，1f（即L）表示PDU的长度是31个字节，<strong>需要注意的是对a1的理解</strong>，a1所对应的二进制为10100001，依据Type的编码规则，其中Tag class的值是10，表示Context-specific，表明该类型需要依赖上下文进行确定，所以该值的类型需要从其它地方进行确定，那要从哪里确定呢？没错，就是Tag number，Tag number的值是0001，表示PDU的类型是get-next-request（<strong>1：get_request，2：get_next_request，3：get_response，4：set_request，5：trap</strong>），你可能会奇怪？<strong>V去哪了？</strong>该SNMP报文中，a1 1f之后所有的字节就是V，P/C的值是1，表示Constructed，表明V是由0个或者多个字节的编码组成的<br>至此，我们已经完成了对SNMP报文中“公共SNMP首部”的分析，解析来我们分析“get/set首部”的编码内容</li>
-<li>02 04 22 70 8b d4：表示请求标识符的编码值，02表示该值的类型是INTEGER，04表该值的长度，22 70 8b d4表示请求标识符具体的值</li>
-<li>02 01 00：表示error-state（差错状态）的编码值，02表示该值的类型是INTEGER，01表该值的长度，00表示error-state具体的值</li>
-<li>02 01 00：表示error-index（差错索引）的编码值，02表示该值的类型是INTEGER，01表该值的长度，00表示error-index具体的值<br>至此，我们已经完成了对SNMP报文中“get/set首部”的分析，解析来我们分析“变量绑定”的编码内容</li>
-<li>30 11：表示变量绑定的编码信息，30所对应的二进制为10100000，其中Tag class的值是10，表示Context-specific，表明该类型需要依赖上下文进行确定，11表示该值的长度</li>
-<li>30 0f：表示一个变量，它的类型依然要根据上下文进行确定</li>
-<li>06 0b 2b 06 01 04 01 8c a6 5e 01 01 01：表示一个变量，它的类型是OBJECT IDENTIFIER，长度是0b，2b 06 01 04 01 8c a6 5e 01 01 01是具体的值</li>
-</ul>
-
+        
       
 
       
@@ -267,17 +194,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Network</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -328,7 +244,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.cockg.top/2018/02/24/ASN1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.cockg.top/2018/04/24/python-series-part2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -342,18 +258,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/01/mib/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          MIB
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/24/big-little-endian/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">字节序</div>
+    <a href="/2018/04/24/rmon/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RMON</div>
       <i class="icon-circle-right"></i>
     </a>
   

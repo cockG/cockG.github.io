@@ -17,7 +17,7 @@
 <meta property="og:description" content="人生苦短，我用python">
 <meta property="og:image" content="http://www.cockg.top/img/python_part1_interactive.png">
 <meta property="og:image" content="http://www.cockg.top/img/python_part1_number.png">
-<meta property="og:updated_time" content="2018-04-19T13:42:24.932Z">
+<meta property="og:updated_time" content="2018-04-24T13:35:37.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习系列一">
 <meta name="twitter:description" content="人生苦短，我用python">
@@ -196,6 +196,28 @@
 <p><em>可以将一个lis或者tuple进行拆包，**可以将一个dict进行拆包<br>但是需要注意的一点是，</em>或者**进行拆包时不能作为单独的语句，需要作为参数传递，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">args = [<span class="number">3</span>, <span class="number">6</span>]</span><br><span class="line">d = &#123;<span class="string">"voltage"</span>: <span class="string">"four million"</span>, <span class="string">"state"</span>: <span class="string">"bleedin' demised"</span>, <span class="string">"action"</span>: <span class="string">"VOOM"</span>&#125;</span><br></pre></td></tr></table></figure></p>
 <p>如果直接使用<em>args将会报错，但是如果作为参数传递如list(range(</em>args))则不会有问题</p>
 <h3 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><p>有些简单的匿名函数可以使用lambda关键字创建，Lambda函数是普通函数的语法糖，Lambda函可以引用它所在域的变量，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_incrementor</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> x: x + n</span><br><span class="line"></span><br><span class="line">f = make_incrementor(<span class="number">42</span>)</span><br><span class="line">f(<span class="number">0</span>)    <span class="number">42</span></span><br><span class="line">f(<span class="number">1</span>)    <span class="number">43</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="函数注释"><a href="#函数注释" class="headerlink" title="函数注释"></a>函数注释</h3><p>Python3.x中，增加了函数注释这个新特性，用于为函数添加额外的注释，它是一个可选功能，允许在函数参数和返回值中添加任意的元数据<br>函数注释主要包括两个方面：</p>
+<ul>
+<li>参数注释：参数名后面跟上一个:，然后跟上一个表达式</li>
+<li>返回值注释：-&gt;后面跟上表达式<br>函数注释可以包含单个注释和多个注释，例如：</li>
+<li><p>单个注释</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(a, b: int, c: <span class="string">'The default value is 5'</span> = <span class="number">5</span>)</span> -&gt; float:</span></span><br><span class="line">    <span class="keyword">return</span> a + b + c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多个注释</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">div</span><span class="params">(a: dict<span class="params">(type=float, help=<span class="string">'the dividend'</span>)</span>, b: dict<span class="params">(type=float, help=<span class="string">'the divisor (must be different than 0)'</span>)</span>)</span> -&gt; dict(type=float, help='the result of dividing a by b'):</span></span><br><span class="line">    <span class="string">"""Divide a by b"""</span></span><br><span class="line">    <span class="keyword">return</span> a / b</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>定义完函数的注释以后，我们可以使用函数对象的<strong>annotations</strong>属性去得到这些信息，它是一个dict，用于将每个参数名（key）映射到其相关的注释（value）</p>
+<h3 id="编码风格"><a href="#编码风格" class="headerlink" title="编码风格"></a>编码风格</h3><ul>
+<li>使用4个空格进行缩进</li>
+<li>每行不要超过79个字符</li>
+<li>使用空白行分割函数和类，以及函数内部的代码块</li>
+<li>尽可能的写注释</li>
+<li>使用docstrings（文档字符串）</li>
+<li>操作符之间和逗号之后使用空格</li>
+<li>使用CamelCase（驼峰命名法）命名class，使用lower_case_with_underscores（带有下划线的小写）命名函数和方法，并且总是使用self作为函数的第一个参数</li>
+<li>为文档指定编码，例如UTF-8</li>
+</ul>
 
       
 
@@ -443,7 +465,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
+                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,15 +477,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,15 +497,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">WebServer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,10 +522,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">系统架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
               </li>
             
             <div class="clearfix"></div>
