@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.cockg.top">
-  <title>Archives: 2018/3 | Blog</title>
+  <title>RMON | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cockG&apos;s blogs">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://www.cockg.top/archives/2018/03/index.html">
+  <meta name="description" content="RMON（Remote Network Monitoring），即远程网络监视，主要实现了统计和告警功能，用于网络中管理设备和对被管理设备的远程监控和管理">
+<meta name="keywords" content="Network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RMON">
+<meta property="og:url" content="http://www.cockg.top/2018/04/24/rmon/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="cockG&apos;s blogs">
+<meta property="og:description" content="RMON（Remote Network Monitoring），即远程网络监视，主要实现了统计和告警功能，用于网络中管理设备和对被管理设备的远程监控和管理">
+<meta property="og:updated_time" content="2018-04-24T09:09:15.087Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
-<meta name="twitter:description" content="cockG&apos;s blogs">
+<meta name="twitter:title" content="RMON">
+<meta name="twitter:description" content="RMON（Remote Network Monitoring），即远程网络监视，主要实现了统计和告警功能，用于网络中管理设备和对被管理设备的远程监控和管理">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -134,178 +136,189 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-rmon" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      RMON
+    </h1>
+  
+
+        
+        <a href="/2018/04/24/rmon/" class="archive-article-date">
+  	<time datetime="2018-04-24T07:16:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>RMON（Remote Network Monitoring），即远程网络监视，主要实现了统计和告警功能，用于网络中管理设备和对被管理设备的远程监控和管理<br><a id="more"></a></p>
+<h2 id="RMON的功能"><a href="#RMON的功能" class="headerlink" title="RMON的功能"></a>RMON的功能</h2><p>RMON主要实现了两个功能：统计和告警<br>统计功能指的是被管理设备可以周期或者持续跟踪统计其端口所连接的网段上的各种流量信息，比如某段时间内某网段上收到的报文总数，或收到的超长报文的总数等<br>告警功能指的是被管理设备能监控指定MIB变量的值，当该值达到告警阈值时（比如端口速率达到指定值，或者广播报文的比例达到指定值），能自动记录日志、向管理设备发送Trap消息</p>
+<h2 id="RMON的工作机制"><a href="#RMON的工作机制" class="headerlink" title="RMON的工作机制"></a>RMON的工作机制</h2><p>RMON允许有多个监控者，监控者可用两种方法收集数据：</p>
+<ul>
+<li>利用专用的RMON probe（探测仪）收集数据，管理设备直接从RMON probe获取管理信息并控制网络资源，这种方式可以获取RMON MIB的全部信息</li>
+<li>将RMON Agent直接植入网络设备（路由器、交换机、HUB等），使它们成为带RMON probe功能的网络设施，管理设备使用SNMP的基本操作与RMON Agent交换数据信息，收集网络管理信息，但是这种方法受设备资源限制，一般不能获取RMON MIB的所有数据，大多数只收集四个组的信息：事件组、告警组、历史组和统计组<h2 id="RMON组"><a href="#RMON组" class="headerlink" title="RMON组"></a>RMON组</h2>RMON规范（RFC2819）种定义了多个RMON组，一般设备都会实现公有MIB中支持的统计组、历史组、事件组和告警组<h3 id="统计组"><a href="#统计组" class="headerlink" title="统计组"></a>统计组</h3>统计组规定系统将持续地对端口的各种流量信息进行统计（目前只支持对以太网端口的统计），并将统计结果存储在以太网统计表（etherStatsTable）中以便管理设备随时查看，统计信息包括网络冲突数、CRC校验报错报文数、过小（或超大）的数据报文数、广播、多播的报文数以及接收字节数、接收报文数等<h3 id="历史组"><a href="#历史组" class="headerlink" title="历史组"></a>历史组</h3>历史组规定系统将按周期对端口的各种流量信息进行统计，并将统计结果存储在历史记录表（etherHistoryTable）中以便管理设备随时查看，统计数据包括带宽利用率、错误包数和总包数等<h3 id="事件组"><a href="#事件组" class="headerlink" title="事件组"></a>事件组</h3>事件组来定义事件索引号及事件的处理方式，事件组定义的事件用于告警组配置项和扩展告警组配置项中，当监控对象达到告警条件时，事件就会触发，事件有如下几种处理方式：</li>
+<li>Log：将事件相关信息（什么事件、事件的内容）记录在本设备RMON MIB的事件日志表中，以便管理设备通过SNMP GET操作进行查看</li>
+<li>Trap：向管理网站发送Trap消息告知该事件的发生</li>
+<li>Log-Trap：即在本设备上记录日志，又向网管站发送Trap消息</li>
+<li>None：不做任何处理<h3 id="告警组"><a href="#告警组" class="headerlink" title="告警组"></a>告警组</h3>RMON告警管理可以对指定的告警变量进行监视，用户定义告警表项后，系统会按照定义的时间周期去获取被监视的告警变量的值，当告警变量的值大于或等于上限阈值时，触发一次上限告警事件，当告警变量的值小于或等于下限阙值，触发一次下限告警事件<h2 id="RMON和SNMP的比较"><a href="#RMON和SNMP的比较" class="headerlink" title="RMON和SNMP的比较"></a>RMON和SNMP的比较</h2></li>
+<li>SNMP是RMON是实现的基础，RMON是SNMP功能的增强，RMON使用SNMP Trap报文发送机制向管理设备发送Trap消息告知告警变量的异常，虽然SNMP也定义了Trap功能，但是通常用于告知被管理设备上某些功能是否运行正常、接口物理状态的变化等，两者监控的对象、触发条件以及报告的内容均不同</li>
+<li>RMON使SNMP能更有效、更积极主动地监测远程网络设备，为监控子网的运行提供了一种高效的手段，RMON协议规定达到告警阙值时被管理设备能自动发送Trap信息，所以管理设备不需要多次去获取MIB变量的值，进行比较，从而能够减少网络管理设备的通讯流量，达到简便而有力地管理大型互联网络的目的</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>赞赏博主<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/10/php-series-1/" class="archive-article-date">
-  	<time datetime="2018-03-10T04:04:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/10/php-series-1/">学习PHP遇到的问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Network</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.cockg.top/2018/04/24/rmon/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/dcs2/" class="archive-article-date">
-  	<time datetime="2018-03-06T03:05:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/17/database-problems/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库问题篇</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/dcs2/">DCS(二)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DCS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/04/dcs/" class="archive-article-date">
-  	<time datetime="2018-03-04T11:17:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/04/dcs/">DCS(-)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DCS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/01/mib/" class="archive-article-date">
-  	<time datetime="2018-03-01T10:32:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/01/mib/">MIB</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Miscellanea</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -328,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
