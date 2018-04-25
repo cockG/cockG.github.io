@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://www.cockg.top/img/Etherne_II.png">
 <meta property="og:image" content="http://www.cockg.top/img/SNAP.png">
 <meta property="og:image" content="http://www.cockg.top/img/lldppdu.png">
-<meta property="og:updated_time" content="2018-04-25T03:34:53.944Z">
+<meta property="og:updated_time" content="2018-04-25T03:48:29.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LLDP">
 <meta name="twitter:description" content="网络设备的种类日益繁多并且各自的配置信息错综复杂，为了使不同厂商的设备能够在网络中相互发现并交互各自的系统配置信息，需要一个标准的信息交流平台，LLDP就是用来做这件事的">
@@ -197,7 +197,7 @@
 </tbody>
 </table>
 <ul>
-<li>SNAP格式封装的LLDP报文<br><img src="/img/SNAP.png" alt="SNAP"><h3 id="LLDPDU"><a href="#LLDPDU" class="headerlink" title="LLDPDU"></a>LLDPDU</h3>LLDPDU就是封装在LLDP报文数据库部分的数据单元，在组成LLDPPDU之前，设备先将本地信息封装成TLV格式，再由若干个TLV组合成一个LLDPDU封装在LLDP报文的数据部分进项传送<br><img src="/img/lldppdu.png" alt="LLDPDU"><br>如上图所示，每个LLDPDU共可以携带28种TLV，其中深蓝色的Chassis ID TLV、Port ID TLV、TTL TLV和End TLV这四种是必须携带的，其余的TLV则为可选携带<h3 id="TLV"><a href="#TLV" class="headerlink" title="TLV"></a>TLV</h3>TLV是组成LLDPDU的单元，每一个TLV都代表一个信息，LLDP可以封装的TLV包括基本TLV、802.1组织定义TLV，802.3组织定义TLV和LLDP-MED（Media Endpoint Discovery，媒体终端发现）TLV</li>
+<li>SNAP格式封装的LLDP报文<br><img src="/img/SNAP.png" alt="SNAP"><h3 id="LLDPDU"><a href="#LLDPDU" class="headerlink" title="LLDPDU"></a>LLDPDU</h3>LLDPDU就是封装在LLDP报文数据库部分的数据单元，在组成LLDPPDU之前，设备先将本地信息封装成TLV格式，再由若干个TLV组合成一个LLDPDU封装在LLDP报文的数据部分进项传送<br><img src="/img/lldppdu.png" alt="LLDPDU"><br>如上图所示，每个LLDPDU共可以携带28种TLV，其中深蓝色的Chassis ID TLV、Port ID TLV、TTL TLV和End TLV这四种是必须携带的，其余的TLV则为可选携带<h3 id="TLV"><a href="#TLV" class="headerlink" title="TLV"></a>TLV</h3>TLV是组成LLDPDU的单元，每一个TLV都代表一个信息，LLDP可以封装的TLV包括基本TLV、802.1组织定义TLV，802.3组织定义TLV和LLDP-MED（Media Endpoint Discovery，媒体终端发现）TLV<br>基本TLV是网络设备管理基础的一组TLV，802.1组织定义TLV、802.3组织定义TLV和LLDP-MED TLV则是由标准组织或其它机构定义的TLV，用于增强网路设备的管理，可以根据实际需要选择是否在LLDPDU中发送</li>
 <li>基本的TLV<br>在基本TLV中，有几种TLV对于实现LLDP功能来说是必选的，即必须在LLDPPDU中发布，如下表所示：</li>
 </ul>
 <table>
@@ -246,6 +246,10 @@
 </tr>
 </tbody>
 </table>
+<ul>
+<li>802.1组织定义TLV的内容如下表所示：<br>| TLV名称 | 说明 |<br>|:————-:|:————-:|<br>| Port VLAN ID | 端口的VLAN ID |<br>| Port And Protocol VLAN ID | 端口的协议VLAN ID |<br>| VLAN Name | 端口VLAN的名称 |<br>| Protocol Identity | 端口支持的协议类型 |</li>
+<li>LLDP-MED TLV</li>
+</ul>
 
       
 
@@ -484,11 +488,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
+                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,11 +500,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
