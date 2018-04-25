@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://www.cockg.top/img/Etherne_II.png">
 <meta property="og:image" content="http://www.cockg.top/img/SNAP.png">
 <meta property="og:image" content="http://www.cockg.top/img/lldppdu.png">
-<meta property="og:updated_time" content="2018-04-25T06:55:40.872Z">
+<meta property="og:updated_time" content="2018-04-25T07:38:12.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LLDP">
 <meta name="twitter:description" content="网络设备的种类日益繁多并且各自的配置信息错综复杂，为了使不同厂商的设备能够在网络中相互发现并交互各自的系统配置信息，需要一个标准的信息交流平台，LLDP就是用来做这件事的">
@@ -347,7 +347,7 @@
 <li>TxRx：既发送也接收LLDP报文</li>
 <li>Tx：只发送不接收LLDP报文</li>
 <li>Rx：只接收不发送LLDP报文</li>
-<li>Disable：既不发送也不接收LLDP报文</li>
+<li>Disable：既不发送也不接收LLDP报文<h3 id="报文发送机制"><a href="#报文发送机制" class="headerlink" title="报文发送机制"></a>报文发送机制</h3>当端口工作在TxRx或Tx模式时，设备会周期性地向邻居设备发送LLDP报文，如果设备的本地配置发生变化则立即发送LLDP报文，以将本地信息的变化情况尽快地通知给邻居设备，但为防止因本地信息频繁变化而引起LLDP报文的大量发送，每发送一个LLDP报文后都将延迟一段时间后再继续发送下一个报文<h3 id="报文接收机制"><a href="#报文接收机制" class="headerlink" title="报文接收机制"></a>报文接收机制</h3>当端口工作在TxRx或Tx模式时，设备会对收到的LLDP报文及携带的TLV进行有效性检查，通过检查后再将邻居信息保存到本地，并根据TTL TLV中TTL的值来设置邻居信息在本地设备上的老化时间，若该值为0，则立即老化该邻居信息</li>
 </ul>
 
       
@@ -596,7 +596,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
+                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,11 +604,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,6 +613,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
