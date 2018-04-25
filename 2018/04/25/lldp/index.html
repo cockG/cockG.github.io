@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://www.cockg.top/img/Etherne_II.png">
 <meta property="og:image" content="http://www.cockg.top/img/SNAP.png">
 <meta property="og:image" content="http://www.cockg.top/img/lldppdu.png">
-<meta property="og:updated_time" content="2018-04-25T07:38:12.156Z">
+<meta property="og:updated_time" content="2018-04-25T09:40:50.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LLDP">
 <meta name="twitter:description" content="网络设备的种类日益繁多并且各自的配置信息错综复杂，为了使不同厂商的设备能够在网络中相互发现并交互各自的系统配置信息，需要一个标准的信息交流平台，LLDP就是用来做这件事的">
@@ -162,8 +162,13 @@
       
         <p>网络设备的种类日益繁多并且各自的配置信息错综复杂，为了使不同厂商的设备能够在网络中相互发现并交互各自的系统配置信息，需要一个标准的信息交流平台，LLDP就是用来做这件事的<br><a id="more"></a></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>LLDP（Link Layer Discovery Protocol），即链路层发现协议，它提供了一种标准的链路层发现方式，可以将本端设备的主要能力、管理地址、设备标识、接口标识等信息组织成不同的TLV（Type/Length/Value），并封装在LLDPDU（Link Layer Discovery Protocol Data Unit，链路层发现协议数据单元）中发布给与自己直连的邻居，邻居收到这些信息以后将其以标准的MIB（Management Information Base，管理信息库）的形式保存起来，以供网络管理设备系统查询及判断链路的通信状况</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="LLDP报文"><a href="#LLDP报文" class="headerlink" title="LLDP报文"></a>LLDP报文</h3><p>装有LLDPDU的报文称为LLDP报文，其封装格式有两种：Ethernet II和SNAP（Subnetwork Access Prorocol，子网访问协议）</p>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>网络中设备向其邻接设备发出其状态信息的通知，并且所有设备的每个端口上都存储着自己的信息，如果本地设备有状态的变化，还可以向与它直接连接的近邻设备发送更新的信息，近邻的设备会将信息存储在标准的SNMP MIB库<br>网络管理系统可以从SNMP MIB库查询出当前第二层的连接情况，LLDP只是一个远端设备状态信息发现协议，它并不能完成网络设备配置和端口控制等功能<br>总的来说，LLDP协议主要完成的工作有以下几个方面：</p>
 <ul>
+<li>初始化并维护本地MIB库中的信息</li>
+<li>从本地MIB库中提取信息，并将信息封装到LLDP帧中，以一定的时间间隔或者当设备状态发生变化时，将LLDP帧发哦那个出去，通告邻接设备</li>
+<li>对收到的LLDP帧进行确认和处理</li>
+<li>通过收到的LLDP帧维护远端设备LLDP MIB信息库</li>
+<li>当Local System MIB或Remote System MIB中有信息发生变化时，向网管上报<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="LLDP报文"><a href="#LLDP报文" class="headerlink" title="LLDP报文"></a>LLDP报文</h3>装有LLDPDU的报文称为LLDP报文，其封装格式有两种：Ethernet II和SNAP（Subnetwork Access Prorocol，子网访问协议）</li>
 <li>Ethernet II格式封装的LLDP报文<br><img src="/img/Etherne_II.png" alt="Ethernet II"><br>各个字段的含义如下：</li>
 </ul>
 <table>
@@ -592,19 +597,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
