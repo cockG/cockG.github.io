@@ -16,7 +16,9 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="网络设备的种类日益繁多并且各自的配置信息错综复杂，为了使不同厂商的设备能够在网络中相互发现并交互各自的系统配置信息，需要一个标准的信息交流平台，LLDP就是用来做这件事的">
 <meta property="og:image" content="http://www.cockg.top/img/Etherne_II.png">
-<meta property="og:updated_time" content="2018-04-25T03:06:47.062Z">
+<meta property="og:image" content="http://www.cockg.top/img/SNAP.png">
+<meta property="og:image" content="http://www.cockg.top/img/lldppdu.png">
+<meta property="og:updated_time" content="2018-04-25T03:34:53.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LLDP">
 <meta name="twitter:description" content="网络设备的种类日益繁多并且各自的配置信息错综复杂，为了使不同厂商的设备能够在网络中相互发现并交互各自的系统配置信息，需要一个标准的信息交流平台，LLDP就是用来做这件事的">
@@ -191,6 +193,56 @@
 <tr>
 <td style="text-align:center">FCS</td>
 <td style="text-align:center">帧检验序列</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>SNAP格式封装的LLDP报文<br><img src="/img/SNAP.png" alt="SNAP"><h3 id="LLDPDU"><a href="#LLDPDU" class="headerlink" title="LLDPDU"></a>LLDPDU</h3>LLDPDU就是封装在LLDP报文数据库部分的数据单元，在组成LLDPPDU之前，设备先将本地信息封装成TLV格式，再由若干个TLV组合成一个LLDPDU封装在LLDP报文的数据部分进项传送<br><img src="/img/lldppdu.png" alt="LLDPDU"><br>如上图所示，每个LLDPDU共可以携带28种TLV，其中深蓝色的Chassis ID TLV、Port ID TLV、TTL TLV和End TLV这四种是必须携带的，其余的TLV则为可选携带<h3 id="TLV"><a href="#TLV" class="headerlink" title="TLV"></a>TLV</h3>TLV是组成LLDPDU的单元，每一个TLV都代表一个信息，LLDP可以封装的TLV包括基本TLV、802.1组织定义TLV，802.3组织定义TLV和LLDP-MED（Media Endpoint Discovery，媒体终端发现）TLV</li>
+<li>基本的TLV<br>在基本TLV中，有几种TLV对于实现LLDP功能来说是必选的，即必须在LLDPPDU中发布，如下表所示：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">TLV名称</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">是否必须发布</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">End of LLDPDU</td>
+<td style="text-align:center">标识LLDPDU结束</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">Chassis ID</td>
+<td style="text-align:center">发送设备的桥MAC地址</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">Port ID</td>
+<td style="text-align:center">标识LLDPDU发送端的端口，当设备不发送MED TLV时，内容为端口名称，当设备发送MED TLV时，内容为端口的MAC地址，没有端口MAC时使用桥MAC</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">Time To Live</td>
+<td style="text-align:center">本设备信息在邻居设备上的存活时间</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">Port Description</td>
+<td style="text-align:center">以太网端口的描述字符串</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">System Name</td>
+<td style="text-align:center">设备的名称</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">System Description</td>
+<td style="text-align:center">系统描述</td>
+<td style="text-align:center">否</td>
 </tr>
 </tbody>
 </table>
@@ -432,6 +484,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
@@ -440,19 +496,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
