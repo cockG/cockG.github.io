@@ -9,13 +9,13 @@
   <title>Python学习（二） | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="人生苦短，我用python">
-<meta name="keywords" content="Programming,Python">
+<meta name="keywords" content="Python,Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习（二）">
 <meta property="og:url" content="http://www.cockg.top/2018/04/24/python-series-part2/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="人生苦短，我用python">
-<meta property="og:updated_time" content="2018-04-24T13:59:41.724Z">
+<meta property="og:updated_time" content="2018-04-27T12:26:13.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习（二）">
 <meta name="twitter:description" content="人生苦短，我用python">
@@ -171,6 +171,46 @@
 <td style="text-align:center">append(x)</td>
 <td style="text-align:center">在list的末尾添加一个元素</td>
 </tr>
+<tr>
+<td style="text-align:center">extend(iterable)</td>
+<td style="text-align:center">添加iterable到list中</td>
+</tr>
+<tr>
+<td style="text-align:center">insert(i, x)</td>
+<td style="text-align:center">插入元素到指定位置</td>
+</tr>
+<tr>
+<td style="text-align:center">remove(x)</td>
+<td style="text-align:center">删除list中的第一次出现的x元素</td>
+</tr>
+<tr>
+<td style="text-align:center">pop([i])</td>
+<td style="text-align:center">删除list中给定位置的元素</td>
+</tr>
+<tr>
+<td style="text-align:center">clear()</td>
+<td style="text-align:center">删除list中的所有元素</td>
+</tr>
+<tr>
+<td style="text-align:center">index(x[, start[, end]])</td>
+<td style="text-align:center">返回list元素值为x的索引</td>
+</tr>
+<tr>
+<td style="text-align:center">count(x)</td>
+<td style="text-align:center">返回list中元素x出现的次数</td>
+</tr>
+<tr>
+<td style="text-align:center">sort(key=None, reverse=False)</td>
+<td style="text-align:center">对list进行排序</td>
+</tr>
+<tr>
+<td style="text-align:center">reverse()</td>
+<td style="text-align:center">逆序</td>
+</tr>
+<tr>
+<td style="text-align:center">copy()</td>
+<td style="text-align:center">返回list的浅拷贝</td>
+</tr>
 </tbody>
 </table>
 
@@ -217,11 +257,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
         		</li>
       		
 		</ul>
@@ -420,7 +460,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
+                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -436,11 +476,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,15 +484,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,11 +492,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SOA</a>
+                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">系统架构</a>
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,6 +509,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Apache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SOA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统架构</a>
               </li>
             
             <div class="clearfix"></div>
