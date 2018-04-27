@@ -9,13 +9,13 @@
   <title>Python学习（二） | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="人生苦短，我用python">
-<meta name="keywords" content="Python,Programming">
+<meta name="keywords" content="Programming,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习（二）">
 <meta property="og:url" content="http://www.cockg.top/2018/04/24/python-series-part2/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="人生苦短，我用python">
-<meta property="og:updated_time" content="2018-04-27T12:26:13.121Z">
+<meta property="og:updated_time" content="2018-04-27T13:59:57.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习（二）">
 <meta name="twitter:description" content="人生苦短，我用python">
@@ -213,6 +213,11 @@
 </tr>
 </tbody>
 </table>
+<p><strong>可以使用del删除list中的元素，与pop()方法不同的是，del还可以用于删除list中的某一部分或者清除list中的所有元素，例如：a = [-1, 1, 66.25, 333, 333, 1234.5]，del a[0]、del a[2:4]、del a[:]</strong></p>
+<h3 id="Tuple"><a href="#Tuple" class="headerlink" title="Tuple"></a>Tuple</h3><p>一个tuple就是一个包含许多由逗号分割的值，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">12345</span>, <span class="number">54321</span>, <span class="string">'hello!'</span></span><br><span class="line">t[<span class="number">0</span>]    <span class="number">12345</span></span><br><span class="line">t       (<span class="number">12345</span>, <span class="number">54321</span>, <span class="string">'hello!'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，对于构造一个空的tuple和只包含一个元素的tuple，有特定的写法，空的tuple使用一个()表示，包含一个元素的tuple元素后面需要跟一个逗号<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">empty = ()</span><br><span class="line">singleton = <span class="string">'hello'</span>,</span><br></pre></td></tr></table></figure></p>
+<p>t = 12345, 54321, ‘hello!’是一个打包的过程，12345，54321，’hello!’被放入到一个tuple中，当然，也可以将一个tuple进行解包，使用x, y, z = t，需要注意的是，等号左边的变量个数要和等号右边tuple中的元素个数相同</p>
+<h3 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h3><p>Python中的set是一个没有重复元素的无序集合，set支持算术运算，例如：union、intersection、difference和symmetric difference<br>使用{}或者set()函数既可以创建一个set，<strong>注意，为了创建一个空的set，必须使用set()函数而不能使用{}，因为{}是创建一个空的dict</strong>，基本使用如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">basket = &#123;<span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>, <span class="string">'banana'</span>&#125;</span><br><span class="line">print(basket)     &#123;<span class="string">'orange'</span>, <span class="string">'banana'</span>, <span class="string">'pear'</span>, <span class="string">'apple'</span>&#125;  <span class="comment">#重复的元素被移除</span></span><br><span class="line"><span class="string">'orange'</span> <span class="keyword">in</span> basket     <span class="keyword">True</span></span><br><span class="line">a = set(<span class="string">'abracadabra'</span>)</span><br><span class="line">b = set(<span class="string">'alacazam'</span>)</span><br><span class="line">a       &#123;<span class="string">'a'</span>, <span class="string">'r'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>&#125;</span><br><span class="line">a - b   &#123;<span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>&#125;    <span class="comment">#在a中但是不在b中的元素</span></span><br><span class="line">a | b   &#123;<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'m'</span>, <span class="string">'z'</span>, <span class="string">'l'</span>&#125;   <span class="comment">#在a中或者在b中</span></span><br><span class="line">a &amp; b   &#123;<span class="string">'a'</span>, <span class="string">'c'</span>&#125;   <span class="comment">#在a和b中同时存在</span></span><br><span class="line">a ^ b   &#123;<span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'m'</span>, <span class="string">'z'</span>, <span class="string">'l'</span>&#125;  <span class="comment">#要么在a中要么在b中，但不能同时在a，b中</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -257,11 +262,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
@@ -460,6 +465,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
@@ -468,19 +481,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,11 +489,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -500,7 +497,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
