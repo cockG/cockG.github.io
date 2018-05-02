@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/04/24/python-series-part2/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="人生苦短，我用python">
-<meta property="og:updated_time" content="2018-04-27T13:59:57.778Z">
+<meta property="og:updated_time" content="2018-05-02T13:42:59.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习（二）">
 <meta name="twitter:description" content="人生苦短，我用python">
@@ -218,6 +218,15 @@
 <p>需要注意的是，对于构造一个空的tuple和只包含一个元素的tuple，有特定的写法，空的tuple使用一个()表示，包含一个元素的tuple元素后面需要跟一个逗号<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">empty = ()</span><br><span class="line">singleton = <span class="string">'hello'</span>,</span><br></pre></td></tr></table></figure></p>
 <p>t = 12345, 54321, ‘hello!’是一个打包的过程，12345，54321，’hello!’被放入到一个tuple中，当然，也可以将一个tuple进行解包，使用x, y, z = t，需要注意的是，等号左边的变量个数要和等号右边tuple中的元素个数相同</p>
 <h3 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h3><p>Python中的set是一个没有重复元素的无序集合，set支持算术运算，例如：union、intersection、difference和symmetric difference<br>使用{}或者set()函数既可以创建一个set，<strong>注意，为了创建一个空的set，必须使用set()函数而不能使用{}，因为{}是创建一个空的dict</strong>，基本使用如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">basket = &#123;<span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>, <span class="string">'banana'</span>&#125;</span><br><span class="line">print(basket)     &#123;<span class="string">'orange'</span>, <span class="string">'banana'</span>, <span class="string">'pear'</span>, <span class="string">'apple'</span>&#125;  <span class="comment">#重复的元素被移除</span></span><br><span class="line"><span class="string">'orange'</span> <span class="keyword">in</span> basket     <span class="keyword">True</span></span><br><span class="line">a = set(<span class="string">'abracadabra'</span>)</span><br><span class="line">b = set(<span class="string">'alacazam'</span>)</span><br><span class="line">a       &#123;<span class="string">'a'</span>, <span class="string">'r'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>&#125;</span><br><span class="line">a - b   &#123;<span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>&#125;    <span class="comment">#在a中但是不在b中的元素</span></span><br><span class="line">a | b   &#123;<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'m'</span>, <span class="string">'z'</span>, <span class="string">'l'</span>&#125;   <span class="comment">#在a中或者在b中</span></span><br><span class="line">a &amp; b   &#123;<span class="string">'a'</span>, <span class="string">'c'</span>&#125;   <span class="comment">#在a和b中同时存在</span></span><br><span class="line">a ^ b   &#123;<span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'m'</span>, <span class="string">'z'</span>, <span class="string">'l'</span>&#125;  <span class="comment">#要么在a中要么在b中，但不能同时在a，b中</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h3><p>可以将dictionary当成一个包含key:value键值对的set，其中key是要求唯一的，dict是通过key进行索引的的，需要注意的的是，<strong>key必须为不可变对象</strong>，比如string或number，当tuple只包含string、number或者tuple时，它也可以作为dict的key，<strong>千万不要使用可变对象作为key，比如list</strong><br>可以使用{}创建一个空的dict，也可以放置一些使用逗号分隔的key:value对在{}作为初始化的值，也可以使用dict()构造函数根据key-value对创建一个dict，下面的例子说明了dict常见的基本操作：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tel = &#123;<span class="string">'jack'</span>: <span class="number">4098</span>, <span class="string">'space'</span>: <span class="number">4139</span>&#125;</span><br><span class="line">tel[<span class="string">'guido'</span>] = <span class="number">4127</span>    //&#123;<span class="string">'jack'</span>: <span class="number">4098</span>, <span class="string">'space'</span>: <span class="number">4139</span>, <span class="string">'guido'</span>: <span class="number">4127</span>&#125;</span><br><span class="line"><span class="keyword">del</span> tel[<span class="string">'sape'</span>]</span><br><span class="line">tel[<span class="string">'irv'</span>] = <span class="number">4127</span>     //&#123;<span class="string">'guido'</span>: <span class="number">4127</span>, <span class="string">'irv'</span>: <span class="number">4127</span>, <span class="string">'jack'</span>: <span class="number">4098</span>&#125;</span><br><span class="line">list(tel.keys())      //[<span class="string">'irv'</span>, <span class="string">'guido'</span>, <span class="string">'jack'</span>]</span><br><span class="line">sorted(tel.keys())    //[<span class="string">'guido'</span>, <span class="string">'irv'</span>, <span class="string">'jack'</span>]</span><br><span class="line"><span class="string">'guido'</span> <span class="keyword">in</span> tel        //<span class="keyword">True</span></span><br><span class="line"><span class="string">'jack'</span> <span class="keyword">not</span> <span class="keyword">in</span> tel     //<span class="keyword">False</span></span><br><span class="line">dict([(<span class="string">'sape'</span>, <span class="number">4139</span>), (<span class="string">'guido'</span>, <span class="number">4127</span>), (<span class="string">'jack'</span>, <span class="number">4098</span>)])   //&#123;<span class="string">'sape'</span>: <span class="number">4139</span>, <span class="string">'jack'</span>: <span class="number">4098</span>, <span class="string">'guido'</span>: <span class="number">4127</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>还可以从任意的key和value表达式创建dict，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;x: x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> (<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>)&#125;     //&#123;<span class="number">2</span>: <span class="number">4</span>, <span class="number">4</span>: <span class="number">16</span>, <span class="number">6</span>: <span class="number">36</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当所有的key都是字符串时，可以使用关键字参数创建一个dict<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict(sape=<span class="number">4139</span>, guido=<span class="number">4127</span>, jack=<span class="number">4098</span>)  //&#123;<span class="string">'sape'</span>: <span class="number">4139</span>, <span class="string">'jack'</span>: <span class="number">4098</span>, <span class="string">'guido'</span>: <span class="number">4127</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>使用item遍历一个dict，可以同时获得对应的key和value<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">knights = &#123;<span class="string">'gallahad'</span>: <span class="string">'the pure'</span>, <span class="string">'robin'</span>: <span class="string">'the brave'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> knights.items():</span><br><span class="line">    print(k, v)</span><br></pre></td></tr></table></figure></p>
+<p>使用enumerate()遍历一个sequence，可以同时获得index和对应位置上的值<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> enumerate([<span class="string">'tic'</span>, <span class="string">'tac'</span>, <span class="string">'toe'</span>]):</span><br><span class="line">    print(i, v)</span><br></pre></td></tr></table></figure></p>
+<p>比较有趣的是，Python中通过zip()函数，可以同时遍历多个sequence，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">questions = [<span class="string">'name'</span>, <span class="string">'quest'</span>, <span class="string">'favorite color'</span>]</span><br><span class="line">answers = [<span class="string">'lancelot'</span>, <span class="string">'the holy grail'</span>, <span class="string">'blue'</span>]</span><br><span class="line"><span class="keyword">for</span> q, a <span class="keyword">in</span> zip(questions, answers):</span><br><span class="line">    print(<span class="string">'What is your &#123;0&#125;?  It is &#123;1&#125;.'</span>.format(q, a))</span><br></pre></td></tr></table></figure></p>
+<p>使用reversed()函数可以逆序遍历一个sequence<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> reversed(range(<span class="number">1</span>, <span class="number">10</span>, <span class="number">2</span>)):</span><br><span class="line">    print(i)    //<span class="number">9</span> <span class="number">7</span> <span class="number">5</span> <span class="number">3</span> <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>使用sorted()函数按序遍历一个sequence<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">basket = [<span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>, <span class="string">'banana'</span>]</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> sorted(set(basket)):</span><br><span class="line">    print(f)    //apple  banana  orange  pear</span><br></pre></td></tr></table></figure></p>
+<h2 id="更多的条件相关"><a href="#更多的条件相关" class="headerlink" title="更多的条件相关"></a>更多的条件相关</h2><p>在Python中，while和if中的条件不仅仅只能是比较符号，还可以包含其它的操作符<br>in或者not in比较操作符检查一个值是否出现（没有出现）在一个sequence中，is或is not操作符用于比较两个对象是否相同，所有的比较操作符号有同样的优先级，但是比算术运算符的优先级低<br>比较可以是链式的，例如： a &lt; b == c</p>
 
       
 
@@ -465,15 +474,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">database</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,7 +482,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,11 +494,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,15 +522,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SOA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">系统架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
               </li>
             
             <div class="clearfix"></div>
