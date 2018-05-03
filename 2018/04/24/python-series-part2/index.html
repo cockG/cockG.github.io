@@ -9,13 +9,13 @@
   <title>Python学习（二） | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="人生苦短，我用python">
-<meta name="keywords" content="Programming,Python">
+<meta name="keywords" content="Python,Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习（二）">
 <meta property="og:url" content="http://www.cockg.top/2018/04/24/python-series-part2/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="人生苦短，我用python">
-<meta property="og:updated_time" content="2018-05-02T13:42:59.409Z">
+<meta property="og:updated_time" content="2018-05-03T12:33:51.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习（二）">
 <meta name="twitter:description" content="人生苦短，我用python">
@@ -226,7 +226,8 @@
 <p>比较有趣的是，Python中通过zip()函数，可以同时遍历多个sequence，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">questions = [<span class="string">'name'</span>, <span class="string">'quest'</span>, <span class="string">'favorite color'</span>]</span><br><span class="line">answers = [<span class="string">'lancelot'</span>, <span class="string">'the holy grail'</span>, <span class="string">'blue'</span>]</span><br><span class="line"><span class="keyword">for</span> q, a <span class="keyword">in</span> zip(questions, answers):</span><br><span class="line">    print(<span class="string">'What is your &#123;0&#125;?  It is &#123;1&#125;.'</span>.format(q, a))</span><br></pre></td></tr></table></figure></p>
 <p>使用reversed()函数可以逆序遍历一个sequence<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> reversed(range(<span class="number">1</span>, <span class="number">10</span>, <span class="number">2</span>)):</span><br><span class="line">    print(i)    //<span class="number">9</span> <span class="number">7</span> <span class="number">5</span> <span class="number">3</span> <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
 <p>使用sorted()函数按序遍历一个sequence<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">basket = [<span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>, <span class="string">'banana'</span>]</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> sorted(set(basket)):</span><br><span class="line">    print(f)    //apple  banana  orange  pear</span><br></pre></td></tr></table></figure></p>
-<h2 id="更多的条件相关"><a href="#更多的条件相关" class="headerlink" title="更多的条件相关"></a>更多的条件相关</h2><p>在Python中，while和if中的条件不仅仅只能是比较符号，还可以包含其它的操作符<br>in或者not in比较操作符检查一个值是否出现（没有出现）在一个sequence中，is或is not操作符用于比较两个对象是否相同，所有的比较操作符号有同样的优先级，但是比算术运算符的优先级低<br>比较可以是链式的，例如： a &lt; b == c</p>
+<h2 id="更多的条件相关"><a href="#更多的条件相关" class="headerlink" title="更多的条件相关"></a>更多的条件相关</h2><p>在Python中，while和if中的条件不仅仅只能是比较符号，还可以包含其它的操作符<br>in或者not in比较操作符检查一个值是否出现（没有出现）在一个sequence中，is或is not操作符用于比较两个对象是否相同，所有的比较操作符号有同样的优先级，但是比算术运算符的优先级低<br>比较可以是链式的，例如： a &lt; b == c<br>比较可以和布尔操作符and和or进行组合，比较结果或者其它的布尔表达式可以使用not进行否定，<strong>其中操作符的优先级为：比较操作符 &gt; not &gt; and &gt;or</strong>，例如：A and not B or C等价于(A and (not B)) or C</p>
+<h2 id="比较Sequences和其它类型"><a href="#比较Sequences和其它类型" class="headerlink" title="比较Sequences和其它类型"></a>比较Sequences和其它类型</h2><p><strong>相同类型的Sequences是可以进行比较的</strong>，Sequences之间使用字典序进行比较，对应元素之间逐个进行比较，例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) &lt; (<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>)   //<span class="keyword">True</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] &lt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>]   //<span class="keyword">True</span></span><br><span class="line"><span class="string">'ABC'</span> &lt; <span class="string">'C'</span> &lt; <span class="string">'Pascal'</span>  //<span class="keyword">True</span></span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>) &lt; (<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>)   //<span class="keyword">True</span></span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>) &lt; (<span class="number">1</span>, <span class="number">2</span>, <span class="number">-1</span>)     //<span class="keyword">True</span></span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) == (<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>)   //<span class="keyword">True</span></span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>, (<span class="string">'aa'</span>, <span class="string">'ab'</span>)) &lt; (<span class="number">1</span>, <span class="number">2</span>, (<span class="string">'abc'</span>, <span class="string">'a'</span>), <span class="number">4</span>)  //<span class="keyword">True</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -271,11 +272,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
         		</li>
       		
 		</ul>
@@ -474,15 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,11 +487,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,7 +499,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,15 +515,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">WebServer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,6 +528,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">系统架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
               </li>
             
             <div class="clearfix"></div>
