@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://www.cockg.top">
   <title>Servlet | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Servlets是可以扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用">
+  <meta name="description" content="Servlets是用于扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Servlet">
 <meta property="og:url" content="http://www.cockg.top/2018/05/03/servlet/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Servlets是可以扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用">
+<meta property="og:description" content="Servlets是用于扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用">
 <meta property="og:image" content="http://www.cockg.top/img/servlet_life_cycle.png">
 <meta property="og:image" content="http://www.cockg.top/img/servlet_scene.png">
-<meta property="og:updated_time" content="2018-05-03T08:55:33.733Z">
+<meta property="og:updated_time" content="2018-05-03T09:04:30.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet">
-<meta name="twitter:description" content="Servlets是可以扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用">
+<meta name="twitter:description" content="Servlets是用于扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用">
 <meta name="twitter:image" content="http://www.cockg.top/img/servlet_life_cycle.png">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -159,7 +159,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Servlets是可以扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用<br><a id="more"></a></p>
+        <p>Servlets是用于扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用<br><a id="more"></a></p>
 <h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>Servlet的生命周期是由Web容器管理的，一个典型的Servlet的生命周期如下：</p>
 <ul>
 <li>Web容器加载Servlet类</li>
@@ -169,7 +169,9 @@
 <li>调用Servlet类的destory方法<br>基本的流程如下图所示：<br><img src="/img/servlet_life_cycle.png" alt="Servlet的生命周期"><br>下图描述了一个典型的servlet生命周期场景</li>
 <li>Web服务器将收到的HTTP请求委托给servlet容器</li>
 <li>servlet容器在调用service()之前加载servlet</li>
-<li>servlet容器通过产生多个线程来处理请求，每个线程执行servlet的单个实例的service()方法<br><img src="/img/servlet_scene.png" alt="Servlet场景"></li>
+<li>servlet容器通过产生多个线程来处理请求，每个线程执行servlet的单个实例的service()方法<br><img src="/img/servlet_scene.png" alt="Servlet场景"><h2 id="Servlet的线程安全问题"><a href="#Servlet的线程安全问题" class="headerlink" title="Servlet的线程安全问题"></a>Servlet的线程安全问题</h2>Servlet默认是以多线程模式执行的，但是servlet只会被初始化一次，只会有一个实例，所以，在并发情况下可能会出现同步问题，一般避免同步问题有如下几种办法：</li>
+<li><strong>尽量避免在servlet中使用成员变量，尽量使用局部变量</strong></li>
+<li>使用同步代码块</li>
 </ul>
 
       
@@ -405,7 +407,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -413,7 +415,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,15 +431,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,6 +444,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
