@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/05/07/backbone-problem/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="学习Backbone时遇到的相关问题">
-<meta property="og:updated_time" content="2018-05-07T01:55:22.977Z">
+<meta property="og:updated_time" content="2018-05-07T02:00:39.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Backbone中遇到的问题">
 <meta name="twitter:description" content="学习Backbone时遇到的相关问题">
@@ -160,7 +160,7 @@
 <h1 id="View中出现事件的多次绑定"><a href="#View中出现事件的多次绑定" class="headerlink" title="View中出现事件的多次绑定"></a>View中出现事件的多次绑定</h1><p>在外部使用new关键字创建View的一个实例，具体代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([moduleName], <span class="function"><span class="keyword">function</span>(<span class="params">TargetModule</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> targetModule = <span class="keyword">new</span> TargetModule(&#123;<span class="attr">el</span>: $(<span class="string">'#app'</span>)&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>其中View中事件绑定如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">events: &#123;</span><br><span class="line">    <span class="string">"click #checkBtn"</span>: <span class="string">"checkBtn"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
 <p>当重复执行上述require部分的代码，然后再点击按钮时，就会出现重复执行按钮点击事件的响应函数checkBtn，<strong>require几次，就会重复执行几次checkBtn函数</strong><br>这是因为，在Backbone的View内部，事件的绑定都是基于this.el和$el这两个对象的，当多次的外部调用都是使用同一个el时，就会执行事件的多次绑定，可以通过采用动态创建的节点作为View的外部节点的方式来解决这个问题，比如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'body'</span>).html(<span class="string">'&lt;div class="main"&gt;&lt;/div&gt;'</span>)</span><br><span class="line"><span class="keyword">new</span> view(&#123;<span class="attr">el</span>:$(<span class="string">'.main'</span>)&#125;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="Moduel出现事件的多次绑定"><a href="#Moduel出现事件的多次绑定" class="headerlink" title="Moduel出现事件的多次绑定"></a>Moduel出现事件的多次绑定</h1><p>在View中，为一个Model绑定事件一般采用如下方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">model.bind(<span class="string">'all'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="Model出现事件的多次绑定"><a href="#Model出现事件的多次绑定" class="headerlink" title="Model出现事件的多次绑定"></a>Model出现事件的多次绑定</h1><p>在View中，为一个Model绑定事件一般采用如下方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">model.bind(<span class="string">'all'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>由于某些原因Model在整个应用的生命周期内创建之后一直没有被销毁，当这个View被重复执行后，每次Model发生数据变更时，就会多次的执行绑定的事件，可以通过如下方式来解决这个问题：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.unbind().bind(.....);</span><br></pre></td></tr></table></figure></p>
 
       
@@ -400,10 +400,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
@@ -417,6 +413,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Backbone</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
