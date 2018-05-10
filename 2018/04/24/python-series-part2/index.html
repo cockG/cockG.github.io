@@ -9,13 +9,13 @@
   <title>Python学习（二） | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="人生苦短，我用python">
-<meta name="keywords" content="Programming,Python">
+<meta name="keywords" content="Python,Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习（二）">
 <meta property="og:url" content="http://www.cockg.top/2018/04/24/python-series-part2/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="人生苦短，我用python">
-<meta property="og:updated_time" content="2018-05-03T13:39:42.604Z">
+<meta property="og:updated_time" content="2018-05-09T13:30:36.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习（二）">
 <meta name="twitter:description" content="人生苦短，我用python">
@@ -232,6 +232,12 @@
 <h3 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h3><p>模块可以导入其它模块，通常放置所有的import语句在模块的开头部分，<strong>导入模块的模块名称会存放在当前模块的全局变量表中</strong>，常见的导入方式如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fibo <span class="keyword">import</span> fib, fib2   //fib、fib2等变量存在于当前模块的全局变量表中，但是fibo不会存在于当前模块的全局变量表中</span><br><span class="line"><span class="keyword">from</span> fibo <span class="keyword">import</span> *          //导入fibo模块中的所有names（除了以_开头的）到当前模块，建议少用</span><br><span class="line"><span class="keyword">import</span> fibo <span class="keyword">as</span> fib          //fib == fibo</span><br><span class="line"><span class="keyword">from</span> fibo <span class="keyword">import</span> fib <span class="keyword">as</span> fibonacci    //fibonaci == fib</span><br></pre></td></tr></table></figure></p>
 <h3 id="执行模块"><a href="#执行模块" class="headerlink" title="执行模块"></a>执行模块</h3><p>通过命令：python fibo.py <arguments>就会使得模块fibo像脚本一样被执行，可以在模块的结尾添加如下语句：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">import</span> sys</span><br><span class="line">    fib(int(sys.argv[<span class="number">1</span>]))</span><br></pre></td></tr></table></figure></arguments></p>
 <p>使得该模块通过命令行运行时if下面的语句会执行，但是通过import导入时，if下面的语句不会执行，对于测试是非常有用的</p>
+<h3 id="模块的搜索路径"><a href="#模块的搜索路径" class="headerlink" title="模块的搜索路径"></a>模块的搜索路径</h3><p>当import一个模块时，解析器会先在内置的模块中查找，看是否存在，如果不存在，则从变量sys.path指定的路径下去查找模块，sys.path的初始化值包含如下几个部分：</p>
+<ul>
+<li>当前脚本所在的目录</li>
+<li>PYTHONPATH（目录名称的集合，该变量所代表的值需要自己指定）</li>
+<li>默认安装所依赖的脚本</li>
+</ul>
 
       
 
@@ -276,11 +282,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Programming</a>
         		</li>
       		
 		</ul>
@@ -479,6 +485,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">common sense</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
@@ -491,11 +501,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">common sense</a>
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,7 +509,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
+                <a href="javascript:void(0)" class="js-tag color3">English</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,7 +521,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,10 +542,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,10 +558,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">系统架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
             
             <div class="clearfix"></div>
