@@ -17,7 +17,7 @@
 <meta property="og:description" content="Servlet是用于扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用">
 <meta property="og:image" content="http://www.cockg.top/img/servlet_life_cycle.png">
 <meta property="og:image" content="http://www.cockg.top/img/servlet_scene.png">
-<meta property="og:updated_time" content="2018-05-12T03:53:03.875Z">
+<meta property="og:updated_time" content="2018-05-12T05:56:29.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet">
 <meta name="twitter:description" content="Servlet是用于扩展和增强Web服务器的一种Java平台技术，它提供了基于组件、平台独立的方式构建基于Web的应用">
@@ -179,7 +179,23 @@
 <li>其它任务（miscellaneous task）：管理资源池、做内存优化、提供安全配置、提供多应用的支持、热部署等等<h3 id="ServletConext和ServletConfig的区别"><a href="#ServletConext和ServletConfig的区别" class="headerlink" title="ServletConext和ServletConfig的区别"></a>ServletConext和ServletConfig的区别</h3></li>
 <li>ServletContext为所有的Servlet所共享，ServletConfig是每个Servlet所私有的</li>
 <li>ServletContext提供的初始化参数整个Web都可以访问，但是ServletConfig提供的参数只能是当前servlet可以访问</li>
-<li>servletContext对象提供了setAttribute方法设置共享参数，而servletConfig并没有对应的set方法<h3 id="PrintWriter和ServletOutPutStream类的区别"><a href="#PrintWriter和ServletOutPutStream类的区别" class="headerlink" title="PrintWriter和ServletOutPutStream类的区别"></a>PrintWriter和ServletOutPutStream类的区别</h3>PrintWriter是字符流，ServletOutputStream是字节流<br>获取方式：response.getWriter()、response.getOutputStream()<br><strong>一个servlet不能同时获取PrintWriter和ServletOutputStream对象，会抛出java.lang.IllegalStateException异常</strong><h3 id="Servlet中能否发生死锁"><a href="#Servlet中能否发生死锁" class="headerlink" title="Servlet中能否发生死锁"></a>Servlet中能否发生死锁</h3>可以，在doPost方法中调用doGet方法，在doGet方法中调用doPost方法<h3 id="Servlet包装类"><a href="#Servlet包装类" class="headerlink" title="Servlet包装类"></a>Servlet包装类</h3>Servlet提供了两个包装类，HttpServletRequestWrapper类和HttpServletResponseWrapper类，这些包装类帮助开发者给出request和response的一般实现。我们可以继承它们并选择我们需要复写的方法进行复写（包装设计模式），而不用复写所有的方法</li>
+<li>servletContext对象提供了setAttribute方法设置共享参数，而servletConfig并没有对应的set方法<h3 id="PrintWriter和ServletOutPutStream类的区别"><a href="#PrintWriter和ServletOutPutStream类的区别" class="headerlink" title="PrintWriter和ServletOutPutStream类的区别"></a>PrintWriter和ServletOutPutStream类的区别</h3>PrintWriter是字符流，ServletOutputStream是字节流<br>获取方式：response.getWriter()、response.getOutputStream()<br><strong>一个servlet不能同时获取PrintWriter和ServletOutputStream对象，会抛出java.lang.IllegalStateException异常</strong><h3 id="Servlet中能否发生死锁"><a href="#Servlet中能否发生死锁" class="headerlink" title="Servlet中能否发生死锁"></a>Servlet中能否发生死锁</h3>可以，在doPost方法中调用doGet方法，在doGet方法中调用doPost方法<h3 id="Servlet包装类"><a href="#Servlet包装类" class="headerlink" title="Servlet包装类"></a>Servlet包装类</h3>Servlet提供了两个包装类，HttpServletRequestWrapper类和HttpServletResponseWrapper类，这些包装类帮助开发者给出request和response的一般实现。我们可以继承它们并选择我们需要复写的方法进行复写（包装设计模式），而不用复写所有的方法<h3 id="Servlet是否是线程安全的，如何创建线程安全的Servlet"><a href="#Servlet是否是线程安全的，如何创建线程安全的Servlet" class="headerlink" title="Servlet是否是线程安全的，如何创建线程安全的Servlet"></a>Servlet是否是线程安全的，如何创建线程安全的Servlet</h3>HttpServlet的init和destory方法在Servlet生命周期中仅调用一次，所以是线程安全的，但是service方法以及doGet、doPost方法是存在线程安全问题的，因为Servlet容易会为每一个客户端请求创建一个线程，这些线程在同一个时刻可能访问同一个Servlet的service方法，所以它们不是线程安全的<br>可以通过如下方式创建线程安全的Servlet：</li>
+<li>尽量使用局部变量，减少全局变量的使用</li>
+<li>对于共享变量，加上synchronized关键字<h3 id="Servlet中常见的线程安全与线程不安全的对象"><a href="#Servlet中常见的线程安全与线程不安全的对象" class="headerlink" title="Servlet中常见的线程安全与线程不安全的对象"></a>Servlet中常见的线程安全与线程不安全的对象</h3></li>
+<li>线程安全：ServletRequest、ServletResponse</li>
+<li>线程不安全：ServletContext、HttpSession<h3 id="Servlet中如何调用另一个Web应用的资源"><a href="#Servlet中如何调用另一个Web应用的资源" class="headerlink" title="Servlet中如何调用另一个Web应用的资源"></a>Servlet中如何调用另一个Web应用的资源</h3>可以使用Response对象的sendRediect()方法，该方法会返回状态码302给浏览器然后请求一个新的URL，如果需要携带数据，可以在Response对象上加Cookie<h3 id="请求转发（forward）和请求重定向（rediect）的区别"><a href="#请求转发（forward）和请求重定向（rediect）的区别" class="headerlink" title="请求转发（forward）和请求重定向（rediect）的区别"></a>请求转发（forward）和请求重定向（rediect）的区别</h3>forward是服务器行为，rediect是客户端行为<br>forwoard的过程：</li>
+<li>客户端发送http请求</li>
+<li>web服务器接收此请求</li>
+<li>容器完成请求处理和转发（转发路径必须是同一个Web容器下的URL）</li>
+<li>将目标资源发送给客户<br><strong>浏览器中的URL保持不变，仍然是第一次访问的路径，转发行为浏览器只做了一次访问请求</strong><br>rediect的过程：</li>
+<li>客户端发送http请求</li>
+<li>web服务器接收此请求</li>
+<li>容器完成请求处理并返回302状态码和新的URL给浏览器</li>
+<li>浏览器发送一个新的Http请求到指定的URL<br><strong>浏览器中的URL发生改变，重定向行为浏览器至少做了两次访问请求</strong><h3 id="HttpServlet为什么声明为抽象类"><a href="#HttpServlet为什么声明为抽象类" class="headerlink" title="HttpServlet为什么声明为抽象类"></a>HttpServlet为什么声明为抽象类</h3>因为需要开发者根据自己的业务实现doGet和doPost的逻辑<h3 id="URL重写"><a href="#URL重写" class="headerlink" title="URL重写"></a>URL重写</h3>HttpSession是基于Cookie工作的，如果浏览器禁用Cookie将导致Session失效，Servlet提供了一种URL重写机制用于处理这种情况，即调用HTTPServletResponse对象的encodeURL方法即可，仅当浏览器禁用Cookie时才会编码，否则会返回原URL<h3 id="Servlet中组件的加载顺序"><a href="#Servlet中组件的加载顺序" class="headerlink" title="Servlet中组件的加载顺序"></a>Servlet中组件的加载顺序</h3>Context -&gt; Listener -&gt; Filter -&gt; Servlet<h3 id="如何获取资源在文件系统中的绝对路劲"><a href="#如何获取资源在文件系统中的绝对路劲" class="headerlink" title="如何获取资源在文件系统中的绝对路劲"></a>如何获取资源在文件系统中的绝对路劲</h3>getServletContext().getRealPath(path)，其中path是以’/‘开头的相对路径<h3 id="如何获取服务器的信息"><a href="#如何获取服务器的信息" class="headerlink" title="如何获取服务器的信息"></a>如何获取服务器的信息</h3>getServletContext().getServerInfo()<h3 id="如何获取客户端的地址"><a href="#如何获取客户端的地址" class="headerlink" title="如何获取客户端的地址"></a>如何获取客户端的地址</h3>request.getRemoteAddr()<h3 id="Servlet3-0的特性"><a href="#Servlet3-0的特性" class="headerlink" title="Servlet3.0的特性"></a>Servlet3.0的特性</h3></li>
+<li>异步处理支持：可以从HttpServletRequest对象中获得一个AsyncContext对象，该对象构成了异步处理的上下文，AsyncContext可以从当前线程传给另外的线程，并在新的线程中完成对请求的处理并返回结果给客户端，初始线程便可以还回给容器线程池以处理更多的请求</li>
+<li>新增注解的支持：简化了Servlet、Filter、Listener的声明</li>
+<li>可插性支持：开发者可以通过插件的方式扩充应用而不用修改原有的应用</li>
+<li>HttpServletRequest 对文件上传的支持</li>
 </ul>
 
       
@@ -432,15 +448,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Backbone</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
               </li>
              
               <li class="article-tag-list-item">
