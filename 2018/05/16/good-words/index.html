@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.cockg.top/2018/05/16/good-words/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="自己的语言组织能力不强，就多记录别人已经总结好的句子">
-<meta property="og:updated_time" content="2018-05-17T02:16:43.721Z">
+<meta property="og:updated_time" content="2018-05-17T06:01:13.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="总结的句子">
 <meta name="twitter:description" content="自己的语言组织能力不强，就多记录别人已经总结好的句子">
@@ -164,7 +164,7 @@
 <li>RBAC是基于角色的访问控制（Role-Based Access Control），在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限</li>
 <li>Apache Shiro的Filter通过URL规则进行过滤和权限验证</li>
 <li>分布式系统（Distributed System）是指利用多台计算机协同解决单台计算机所不能解决的计算、存储等问题，多台计算机通过网络互连，分布式系统一般分为两种：分布式存储和分布式计算，分布式存储主要有分布式文件系统和分布式数据库</li>
-<li>微服务是一种架构风格，服务之间是松耦合的，每个服务运行在自己的进程之中，并且使用轻量级机制通信，这些服务基于业务能力构建</li>
+<li>微服务是一种架构风格，这些服务一般是基于业务能力构建，每个服务运行在自己的进程之中（松耦合），服务体系之间使用轻量级机制通信，常见的是：RPC和RESTful，业内对微服务的实现，基本是确定一个边界，在该边界内，使用RPC，边界外，使用RESTful，这个边界，可以是业务、部门，甚至是全公司</li>
 <li>全文检索是指计算机索引程序通过扫描文章中的每一个词、对每一个词建立一个索引，指明该词在文章中出现的次数和位置，当用户查询的时候，检索程序根据事先建立的索引进行查找，并将查找结果反馈给用户的检索方式</li>
 <li>Spring Boot使用“习惯优于配置”的理念，采用包扫描和自动化配置的机制来加载依赖Jar中的Spring Bean，不需要任何的XML配置，就可以实现Spring的所有配置</li>
 <li>响应式Web设计（RWD：Responsive Web Design）是网页内容根据设备屏幕尺寸的不同做出相应调整的网页设计，从而提高网页在移动端的用户体验，自适应Web设计（AWD：Adaptive Web Design）是网页内容根据设备的不同而进行适应的设计</li>
@@ -403,10 +403,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
@@ -415,15 +411,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Data Storage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Miscellanea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,15 +419,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Data Storage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DCS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">English</a>
+                <a href="javascript:void(0)" class="js-tag color5">Word</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,15 +443,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Frame</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Word</a>
+                <a href="javascript:void(0)" class="js-tag color3">English</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,10 +468,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">License</a>
               </li>
              
               <li class="article-tag-list-item">
